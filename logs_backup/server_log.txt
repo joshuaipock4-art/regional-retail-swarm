@@ -1,0 +1,1 @@
+Tokyo Server Rental landing page running at http://localhost:3000
