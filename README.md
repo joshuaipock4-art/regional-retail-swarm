@@ -50,6 +50,7 @@ The system is configured via `idm/system/env.sh`. The following variables are re
 | `LOG_DIR` | Directory for system and agent logs | `/idm/system/logs` |
 | `GEMINI_MODEL` | AI model used for agent decision logic | `gemini-1.5-pro` |
 | `REGION_COUNT` | Number of states/regions in the swarm | `9` |
+| `ADMIN_EMAIL` | Administrator contact email | `joshuaipock4@gmail.com` |
 
 ## Directory Structure
 - `idm/agents/`: Individual agent logic and bootstrap scripts.

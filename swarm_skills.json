@@ -3,7 +3,11 @@
   "info": {
     "title": "9-State Regional Retail Swarm API",
     "description": "Interface for the multi-agent retail engine, compatible with IBM watsonx Orchestrate.",
-    "version": "1.0.0"
+    "version": "1.0.0",
+    "contact": {
+      "name": "Joshua Ipock",
+      "email": "joshuaipock4@gmail.com"
+    }
   },
   "servers": [
     {
