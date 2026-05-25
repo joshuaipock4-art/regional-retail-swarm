@@ -1,0 +1,17 @@
+# Local/System folders
+.*
+!/.gitignore
+!/Dockerfile
+!/idm/
+!/README.md
+!/swarm_skills.json
+
+# Exclude large binaries and terraform
+.terraform/
+.cargo/
+.npm/
+.cache/
+ibmcloud
+tmp/
+*.tfstate*
+*.log
