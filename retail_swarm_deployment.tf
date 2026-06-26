@@ -53,7 +53,7 @@ resource "ibm_is_instance" "swarm_instance" {
 
   user_data = <<EOD
 #!/bin/bash
-echo "Initializing 9-State Retail Swarm Architecture..."
+echo "Initializing Autonomous Italian Leather Retail Swarm Architecture..."
 
 # Install dependencies
 apt-get update
