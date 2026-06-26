@@ -29,4 +29,4 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
   }" | python3 -m json.tool
 
 echo "Expert DevOps Deployment Complete!"
-echo "Your 9-state retail swarm is now LIVE on IBM Cloud."
+echo "Your autonomous Italian leather dropshipping retail swarm is now LIVE on IBM Cloud."

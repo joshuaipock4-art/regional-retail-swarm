@@ -1,7 +1,7 @@
-# 9-State Regional Retail Swarm Engine
+# Autonomous Italian Leather Dropshipping Store
 
 ## Overview
-This standardized deployment package implements a 9-state regional retail swarm architecture. It leverages a multi-agent system where each agent is responsible for a specific stage of the e-commerce lifecycle, from trend scouting to post-purchase analytics.
+This standardized deployment package implements an autonomous online dropshipping store dedicated entirely to selling top Italian leather products. It leverages a multi-agent system where each agent is responsible for a specific stage of the e-commerce lifecycle, from Italian leather trend scouting to post-purchase analytics.
 
 The system is designed for high availability and regional isolation, managed by a central Supervisor daemon that ensures process stability and automatic recovery.
 
@@ -31,9 +31,9 @@ graph TB
 This swarm is fully compatible with **IBM watsonx Orchestrate**. Each agent's specialized capability is exposed as a "Skill" via the Storefront API.
 
 ### Available Skills:
-- **Scout Trends**: Analyzes regional data for market opportunities.
-- **Check Inventory**: Real-time stock status across 9 states.
-- **Process Order**: Triggers the fulfillment and delivery pipeline.
+- **Scout Trends**: Analyzes global data for top Italian leather trends.
+- **Check Inventory**: Real-time dropshipping supplier stock status.
+- **Process Order**: Triggers dropshipping fulfillment and delivery pipeline.
 
 ### How to Import Skills:
 1. Download the `swarm_skills.json` file from this repository.
@@ -49,7 +49,7 @@ The system is configured via `idm/system/env.sh`. The following variables are re
 | `SWARM_ENV` | Deployment environment | `production` |
 | `LOG_DIR` | Directory for system and agent logs | `/idm/system/logs` |
 | `GEMINI_MODEL` | AI model used for agent decision logic | `gemini-1.5-pro` |
-| `REGION_COUNT` | Number of states/regions in the swarm | `9` |
+| `REGION_COUNT` | Number of states/regions in the swarm (Optional) | `9` |
 | `ADMIN_EMAIL` | Administrator contact email | `joshuaipock4@gmail.com` |
 
 ## Directory Structure

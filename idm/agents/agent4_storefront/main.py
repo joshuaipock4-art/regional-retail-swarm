@@ -3,8 +3,8 @@ import os
 import time
 
 app = FastAPI(
-    title="9-State Regional Retail Swarm API",
-    description="Interface for the multi-agent retail engine, compatible with IBM watsonx Orchestrate.",
+    title="Autonomous Italian Leather Dropshipping Store API",
+    description="Interface for the multi-agent autonomous dropshipping store, compatible with IBM watsonx Orchestrate.",
     version="1.0.0",
     servers=[{"url": "https://online-retail-swarm-app.2aavgmo7wbf3.jp-tok.codeengine.appdomain.cloud"}]
 )
@@ -14,44 +14,44 @@ def read_root():
     return {"status": "online", "swarm": "active", "agents": 9}
 
 @app.get("/scout-trends", operation_id="scoutTrends")
-def scout_trends(region: str = "all"):
+def scout_trends(category: str = "all"):
     """
-    Triggers Agent 0 (Trend Scout) to analyze regional market data.
+    Triggers Agent 0 (Trend Scout) to analyze global market data for top Italian leather trends.
     """
     # Logic to interact with Agent 0 would go here
     return {
         "agent": "agent0_trend_scout",
-        "region": region,
-        "findings": ["High demand for sustainable materials in Tokyo", "Rising trend in modular furniture"],
+        "category": category,
+        "findings": ["High demand for handcrafted full-grain leather bags", "Rising trend in Italian leather minimalist wallets"],
         "timestamp": time.time()
     }
 
 @app.get("/check-inventory", operation_id="checkInventory")
 def check_inventory(product_id: str):
     """
-    Queries Agent 7 (Inventory) for current stock levels across the 9 states.
+    Queries Agent 7 (Inventory) for current stock levels from Italian dropshipping suppliers.
     """
     return {
         "agent": "agent7_inventory",
         "product_id": product_id,
         "stock_status": "adequate",
-        "regional_availability": {
-            "jp-tok-1": 450,
-            "jp-tok-2": 120,
-            "us-south": 890
+        "supplier_availability": {
+            "supplier-florence": 450,
+            "supplier-milan": 120,
+            "supplier-rome": 890
         }
     }
 
 @app.post("/process-order", operation_id="processOrder")
-def process_order(order_id: str, region: str):
+def process_order(order_id: str, category: str):
     """
-    Coordinates Agent 5 (Fulfillment) to start the regional delivery pipeline.
+    Coordinates Agent 5 (Fulfillment) to start the dropshipping delivery pipeline.
     """
     return {
         "agent": "agent5_fulfillment",
         "order_id": order_id,
         "status": "processing",
-        "estimated_delivery": "2-4 business days"
+        "estimated_delivery": "7-14 business days"
     }
 
 if __name__ == "__main__":
