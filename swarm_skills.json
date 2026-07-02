@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://online-retail-swarm-app.2aavgmo7wbf3.jp-tok.codeengine.appdomain.cloud"
+      "url": "https://online-retail-swarm-app.2aavgmo7wbf3.us-south.codeengine.appdomain.cloud"
     }
   ],
   "paths": {

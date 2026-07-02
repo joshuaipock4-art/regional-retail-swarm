@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "ibm" {
-  region = "jp-tok"
+  region = "us-south"
 }
 
 variable "resource_group_id" {
@@ -23,7 +23,7 @@ resource "ibm_is_vpc" "swarm_vpc" {
 resource "ibm_is_subnet" "swarm_subnet" {
   name                     = "online-retail-swarm-subnet"
   vpc                      = ibm_is_vpc.swarm_vpc.id
-  zone                     = "jp-tok-1"
+  zone                     = "us-south-1"
   total_ipv4_address_count = 16
   resource_group           = var.resource_group_id
 }
@@ -41,7 +41,7 @@ data "ibm_is_image" "ubuntu" {
 resource "ibm_is_instance" "swarm_instance" {
   name           = "online-retail-swarm-node"
   vpc            = ibm_is_vpc.swarm_vpc.id
-  zone           = "jp-tok-1"
+  zone           = "us-south-1"
   keys           = [ibm_is_ssh_key.swarm_ssh_key.id]
   image          = data.ibm_is_image.ubuntu.id
   profile        = "cx2-2x4"
@@ -396,6 +396,42 @@ directory=/idm/agents/agent8_analytics
 autostart=true
 autorestart=true
 stdout_logfile=/idm/system/logs/agent8.log
+stderr_logfile=/idm/system/logs/agent.log
+INNER_EOF
+mkdir -p /idm/agents/agent10_competitor_analyst
+cat << 'INNER_EOF' > /idm/agents/agent10_competitor_analyst/main.py
+import time
+import os
+import sys
+
+agent_id = os.environ.get("AGENT_ID", "unknown")
+agent_role = os.environ.get("AGENT_ROLE", "worker")
+
+print(f"[BOOT] {agent_role} ({agent_id}) initialized.")
+
+try:
+    while True:
+        print(f"[RUN] {agent_role} is active. Processing regional data...")
+        time.sleep(30)
+except KeyboardInterrupt:
+    print(f"[STOP] {agent_role} shutting down.")
+
+INNER_EOF
+cat << 'INNER_EOF' > /idm/agents/agent10_competitor_analyst/bootstrap.sh
+#!/usr/bin/env bash
+export AGENT_ID="agent10"
+export AGENT_ROLE="agent10_competitor_analyst"
+source /idm/system/env.sh
+python3 -u /idm/agents/agent10_competitor_analyst/main.py
+INNER_EOF
+chmod +x /idm/agents/agent10_competitor_analyst/bootstrap.sh
+cat << 'INNER_EOF' > /idm/system/supervisor/agent10.conf
+[program:agent10]
+command=bash /idm/agents/agent10_competitor_analyst/bootstrap.sh
+directory=/idm/agents/agent10_competitor_analyst
+autostart=true
+autorestart=true
+stdout_logfile=/idm/system/logs/agent10.log
 stderr_logfile=/idm/system/logs/agent.log
 INNER_EOF
 ln -s /idm/system/supervisor/*.conf /etc/supervisor/conf.d/

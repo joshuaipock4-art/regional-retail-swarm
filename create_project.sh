@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source .env
+source .env 2>/dev/null || true
+export REGION="${REGION:-us-south}"
 RG_ID="dc975b952cbe4f69900ced1a364da99a"
 
 # 1. Get Access Token
@@ -12,7 +13,7 @@ ACCESS_TOKEN=$(echo $TOKEN_RESPONSE | sed -n 's/.*"access_token":"\([^"]*\)".*/\
 
 # 2. Create Project
 echo "Creating Code Engine project: online-retail-swarm-project"
-curl -s -X POST "https://api.jp-tok.codeengine.cloud.ibm.com/v2/projects" \
+curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d "{
