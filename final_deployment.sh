@@ -5,7 +5,7 @@ set -e
 
 export REGION="${REGION:-us-south}"
 
-GITHUB_TOKEN="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"
+GITHUB_TOKEN="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"
 REPO_URL="https://github.com/joshuaipock4-art/regional-retail-swarm"
 NAMESPACE="online_retail_swarm"
 IMAGE_NAME="retail-swarm"

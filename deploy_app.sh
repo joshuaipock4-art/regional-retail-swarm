@@ -56,28 +56,8 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
     \"port\": 8080,
     \"run_env_variables\": [
       {
-        \"name\": \"SHOPIFY_CLIENT_ID\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"SHOPIFY_CLIENT_ID\"
-      },
-      {
-        \"name\": \"SHOPIFY_CLIENT_SECRET\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"SHOPIFY_CLIENT_SECRET\"
-      },
-      {
-        \"name\": \"SHOPIFY_STORE_URL\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"SHOPIFY_STORE_URL\"
-      },
-      {
-        \"name\": \"CJ_DROPSHIPPING_API_KEY\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"CJ_DROPSHIPPING_API_KEY\"
+        \"type\": \"secret_full_reference\",
+        \"reference\": \"ecommerce-secrets\"
       }
     ]
   }" | python3 -m json.tool
@@ -97,28 +77,8 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
     \"image_secret\": \"retail-swarm-registry-secret\",
     \"run_env_variables\": [
       {
-        \"name\": \"SHOPIFY_CLIENT_ID\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"SHOPIFY_CLIENT_ID\"
-      },
-      {
-        \"name\": \"SHOPIFY_CLIENT_SECRET\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"SHOPIFY_CLIENT_SECRET\"
-      },
-      {
-        \"name\": \"SHOPIFY_STORE_URL\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"SHOPIFY_STORE_URL\"
-      },
-      {
-        \"name\": \"CJ_DROPSHIPPING_API_KEY\",
-        \"type\": \"secret_key_ref\",
-        \"reference\": \"ecommerce-secrets\",
-        \"key\": \"CJ_DROPSHIPPING_API_KEY\"
+        \"type\": \"secret_full_reference\",
+        \"reference\": \"ecommerce-secrets\"
       }
     ],
     \"run_arguments\": [
