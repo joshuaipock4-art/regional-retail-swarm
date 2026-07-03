@@ -1,81 +1,100 @@
-from fastapi import FastAPI, HTTPException, Request, Response
-from fastapi.responses import RedirectResponse
+from fastapi import FastAPI, HTTPException
 import os
 import time
-import shopify
-import binascii
+import requests
 
 app = FastAPI(
     title="9-State Regional Retail Swarm API",
     description="Interface for the multi-agent retail engine, compatible with IBM watsonx Orchestrate.",
     version="1.0.0",
-    servers=[{"url": "https://online-retail-swarm-app.2aavgmo7wbf3.jp-tok.codeengine.appdomain.cloud"}]
+    servers=[{"url": "https://online-retail-swarm-app.2aavgmo7wbf3.us-south.codeengine.appdomain.cloud"}]
 )
 
-# Shopify Configuration
-SHOPIFY_API_KEY = os.environ.get("SHOPIFY_API_KEY", "your_api_key")
-SHOPIFY_API_SECRET = os.environ.get("SHOPIFY_API_SECRET", "your_api_secret")
-SHOPIFY_API_VERSION = os.environ.get("SHOPIFY_API_VERSION", "2024-01")
-SHOPIFY_SCOPES = os.environ.get("SHOPIFY_SCOPES", "read_products,read_orders").split(",")
-HOST = os.environ.get("HOST", "https://your-app-domain.com")
+class ShopifyClient:
+    """
+    Shopify Admin REST API connection client supporting Client Credentials Token Exchange
+    """
+    def __init__(self, client_id, client_secret, store_url):
+        self.client_id = client_id
+        self.client_secret = client_secret
+        if stroke_url := store_url:
+            if not stroke_url.startswith("http"):
+                self.store_url = f"https://{stroke_url}"
+            else:
+                self.store_url = stroke_url
+        else:
+            self.store_url = None
+            
+        self.access_token = None
+        self.headers = {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        }
+        self.fetch_access_token()
 
-shopify.Session.setup(api_key=SHOPIFY_API_KEY, secret=SHOPIFY_API_SECRET)
+    def fetch_access_token(self):
+        if not self.client_id or not self.client_secret or not self.store_url:
+            print("[ShopifyClient] Warning: Client ID, Secret, or Store URL missing.")
+            return False
+        url = f"{self.store_url}/admin/oauth/access_token"
+        payload = {
+            "client_id": self.client_id,
+            "client_secret": self.client_secret,
+            "grant_type": "client_credentials"
+        }
+        try:
+            print(f"[ShopifyClient] Requesting dynamic access token via Client Credentials Grant...")
+            response = requests.post(url, json=payload, timeout=10)
+            if response.status_code == 200:
+                data = response.json()
+                self.access_token = data.get("access_token")
+                if self.access_token:
+                    self.headers["X-Shopify-Access-Token"] = self.access_token
+                    print("[ShopifyClient] Dynamic access token successfully acquired.")
+                    return True
+            print(f"[ShopifyClient] Token exchange failed (Status {response.status_code}): {response.text}")
+            return False
+        except Exception as e:
+            print(f"[ShopifyClient] Token exchange exception: {e}")
+            return False
+
+    def verify_connection(self):
+        if not self.access_token or not self.store_url:
+            return False
+        url = f"{self.store_url}/admin/api/2024-04/shop.json"
+        try:
+            response = requests.get(url, headers=self.headers, timeout=5)
+            return response.status_code == 200
+        except Exception:
+            return False
+
+# Initialize Shopify Admin API connection client using environment variables
+SHOPIFY_CLIENT_ID = os.environ.get("SHOPIFY_CLIENT_ID", "")
+SHOPIFY_CLIENT_SECRET = os.environ.get("SHOPIFY_CLIENT_SECRET", "")
+SHOPIFY_URL = os.environ.get("SHOPIFY_STORE_URL", "")
+shopify_client = ShopifyClient(client_id=SHOPIFY_CLIENT_ID, client_secret=SHOPIFY_CLIENT_SECRET, store_url=SHOPIFY_URL)
 
 @app.get("/")
 def read_root():
-    return {"status": "online", "swarm": "active", "agents": 9}
-
-@app.get("/shopify/install")
-def shopify_install(shop: str):
-    """Initiates the Shopify OAuth flow."""
-    if not shop:
-        raise HTTPException(status_code=400, detail="Missing shop parameter")
-
-    # Generate a random state
-    state = binascii.b2a_hex(os.urandom(15)).decode("utf-8")
-
-    # Build the authorization URL
-    redirect_uri = f"{HOST}/shopify/callback"
-
-    try:
-        session = shopify.Session(shop, SHOPIFY_API_VERSION)
-        auth_url = session.create_permission_url(SHOPIFY_SCOPES, redirect_uri, state)
-        return RedirectResponse(auth_url)
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-@app.get("/shopify/callback")
-def shopify_callback(request: Request, shop: str):
-    """Handles the Shopify OAuth callback."""
-    if not shop:
-        raise HTTPException(status_code=400, detail="Missing shop parameter")
-
-    try:
-        session = shopify.Session(shop, SHOPIFY_API_VERSION)
-        access_token = session.request_token(dict(request.query_params))
-
-        # Here you would typically save the access_token and shop to your database
-
-        return {"status": "success", "message": "App installed successfully", "shop": shop}
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"OAuth failed: {str(e)}")
-
-@app.post("/shopify/webhooks/{topic}")
-async def shopify_webhook(topic: str, request: Request):
-    """Receives Shopify webhooks."""
-    # Verification logic would go here (checking HMAC)
-
-    body = await request.body()
-    # Process the webhook based on the topic
-
-    return Response(status_code=200)
+    # Show status of live API connectivity as well
+    shopify_connected = shopify_client.verify_connection() if (SHOPIFY_TOKEN and SHOPIFY_URL) else False
+    cj_key_set = bool(os.environ.get("CJ_DROPSHIPPING_API_KEY"))
+    
+    return {
+        "status": "online", 
+        "swarm": "active", 
+        "agents": 9,
+        "api_connectivity": {
+            "shopify": "connected" if shopify_connected else "configured_offline" if (SHOPIFY_TOKEN and SHOPIFY_URL) else "disconnected",
+            "cj_dropshipping": "configured" if cj_key_set else "disconnected"
+        }
+    }
 
 @app.get("/scout-trends", operation_id="scoutTrends")
 def scout_trends(region: str = "all"):
     """
     Triggers Agent 0 (Trend Scout) to analyze regional market data.
     """
-    # Logic to interact with Agent 0 would go here
     return {
         "agent": "agent0_trend_scout",
         "region": region,
@@ -93,8 +112,8 @@ def check_inventory(product_id: str):
         "product_id": product_id,
         "stock_status": "adequate",
         "regional_availability": {
-            "jp-tok-1": 450,
-            "jp-tok-2": 120,
+            "us-south-1": 450,
+            "us-south-2": 120,
             "us-south": 890
         }
     }
