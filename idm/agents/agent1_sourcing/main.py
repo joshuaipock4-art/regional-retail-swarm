@@ -82,19 +82,28 @@ cj_client = CJDropshippingClient(api_key=CJ_API_KEY)
 LUXURY_PRODUCTS_TEMPLATE = [
     # --- Women's Dress Shoes & Luxury Heels ---
     {
-        "title": "Tuscany Velvet Hand-Stitched Stiletto Heels",
-        "body_html": "<p><strong>Material:</strong> Premium Italian velvet upper, full-grain Tuscan calfskin leather lining, hand-stitched leather sole.</p><p><strong>Source:</strong> Direct Italy/Tuscany artisan networks.</p><p><strong>Description:</strong> Exquisite hand-crafted stiletto heels featuring premium velvet wrap, designed for unmatched elegance and structural durability.</p>",
+        "title": "Tuscany Crystal-Embellished Satin Stiletto Heels",
+        "body_html": "<p><strong>Material:</strong> Premium Italian satin wrap, crystal-encrusted strap details, full-grain calfskin leather lining, hand-stitched leather sole.</p><p><strong>Source:</strong> Milan artisan designer studios.</p><p><strong>Description:</strong> Ultra-premium satin stiletto heels adorned with sparkling crystal trim, offering a stunning silhouette for luxury formal occasions.</p>",
         "vendor": "Tuscany Artisan Networks",
         "product_type": "Women's Dress Shoes & Luxury Heels",
         "images": [
-            {"src": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800"},
-            {"src": "https://images.unsplash.com/photo-1596702994230-a885f67a6d8d?auto=format&fit=crop&q=80&w=800"}
+            {"src": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
-            {"sku": "TUS-W-HEEL-RED-37", "option1": "Red", "option2": "37", "cost_price": 245.00},
-            {"sku": "TUS-W-HEEL-RED-38", "option1": "Red", "option2": "38", "cost_price": 245.00},
-            {"sku": "TUS-W-HEEL-BLK-37", "option1": "Black", "option2": "37", "cost_price": 245.00},
-            {"sku": "TUS-W-HEEL-BLK-38", "option1": "Black", "option2": "38", "cost_price": 245.00}
+            {"sku": "TUS-W-HEEL-SLV-35", "option1": "Silver", "option2": "35", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-SLV-36", "option1": "Silver", "option2": "36", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-SLV-37", "option1": "Silver", "option2": "37", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-SLV-38", "option1": "Silver", "option2": "38", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-SLV-39", "option1": "Silver", "option2": "39", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-SLV-40", "option1": "Silver", "option2": "40", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-SLV-41", "option1": "Silver", "option2": "41", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-35", "option1": "Black", "option2": "35", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-36", "option1": "Black", "option2": "36", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-37", "option1": "Black", "option2": "37", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-38", "option1": "Black", "option2": "38", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-39", "option1": "Black", "option2": "39", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-40", "option1": "Black", "option2": "40", "cost_price": 285.00},
+            {"sku": "TUS-W-HEEL-BLK-41", "option1": "Black", "option2": "41", "cost_price": 285.00}
         ]
     },
     {
@@ -106,10 +115,13 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"src": "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
+            {"sku": "VEN-W-PUMP-BLK-35", "option1": "Black", "option2": "35", "cost_price": 210.00},
+            {"sku": "VEN-W-PUMP-BLK-36", "option1": "Black", "option2": "36", "cost_price": 210.00},
             {"sku": "VEN-W-PUMP-BLK-37", "option1": "Black", "option2": "37", "cost_price": 210.00},
             {"sku": "VEN-W-PUMP-BLK-38", "option1": "Black", "option2": "38", "cost_price": 210.00},
-            {"sku": "VEN-W-PUMP-SLV-37", "option1": "Silver", "option2": "37", "cost_price": 210.00},
-            {"sku": "VEN-W-PUMP-SLV-38", "option1": "Silver", "option2": "38", "cost_price": 210.00}
+            {"sku": "VEN-W-PUMP-BLK-39", "option1": "Black", "option2": "39", "cost_price": 210.00},
+            {"sku": "VEN-W-PUMP-BLK-40", "option1": "Black", "option2": "40", "cost_price": 210.00},
+            {"sku": "VEN-W-PUMP-BLK-41", "option1": "Black", "option2": "41", "cost_price": 210.00}
         ]
     },
     {
@@ -121,10 +133,13 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"src": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
+            {"sku": "AMA-W-SAND-GLD-35", "option1": "Gold", "option2": "35", "cost_price": 175.00},
+            {"sku": "AMA-W-SAND-GLD-36", "option1": "Gold", "option2": "36", "cost_price": 175.00},
             {"sku": "AMA-W-SAND-GLD-37", "option1": "Gold", "option2": "37", "cost_price": 175.00},
             {"sku": "AMA-W-SAND-GLD-38", "option1": "Gold", "option2": "38", "cost_price": 175.00},
-            {"sku": "AMA-W-SAND-TAN-37", "option1": "Tan", "option2": "37", "cost_price": 175.00},
-            {"sku": "AMA-W-SAND-TAN-38", "option1": "Tan", "option2": "38", "cost_price": 175.00}
+            {"sku": "AMA-W-SAND-GLD-39", "option1": "Gold", "option2": "39", "cost_price": 175.00},
+            {"sku": "AMA-W-SAND-GLD-40", "option1": "Gold", "option2": "40", "cost_price": 175.00},
+            {"sku": "AMA-W-SAND-GLD-41", "option1": "Gold", "option2": "41", "cost_price": 175.00}
         ]
     },
 
@@ -138,10 +153,13 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"src": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
+            {"sku": "JIN-W-AERO-WHT-35", "option1": "White", "option2": "35", "cost_price": 38.50},
             {"sku": "JIN-W-AERO-WHT-36", "option1": "White", "option2": "36", "cost_price": 38.50},
             {"sku": "JIN-W-AERO-WHT-37", "option1": "White", "option2": "37", "cost_price": 38.50},
-            {"sku": "JIN-W-AERO-GRY-36", "option1": "Grey", "option2": "36", "cost_price": 38.50},
-            {"sku": "JIN-W-AERO-GRY-37", "option1": "Grey", "option2": "37", "cost_price": 38.50}
+            {"sku": "JIN-W-AERO-WHT-38", "option1": "White", "option2": "38", "cost_price": 38.50},
+            {"sku": "JIN-W-AERO-WHT-39", "option1": "White", "option2": "39", "cost_price": 38.50},
+            {"sku": "JIN-W-AERO-WHT-40", "option1": "White", "option2": "40", "cost_price": 38.50},
+            {"sku": "JIN-W-AERO-WHT-41", "option1": "White", "option2": "41", "cost_price": 38.50}
         ]
     },
     {
@@ -186,10 +204,12 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"src": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
+            {"sku": "MIL-M-OXFORD-BRN-40", "option1": "Brown", "option2": "40", "cost_price": 185.00},
             {"sku": "MIL-M-OXFORD-BRN-41", "option1": "Brown", "option2": "41", "cost_price": 185.00},
             {"sku": "MIL-M-OXFORD-BRN-42", "option1": "Brown", "option2": "42", "cost_price": 185.00},
-            {"sku": "MIL-M-OXFORD-BLK-41", "option1": "Black", "option2": "41", "cost_price": 185.00},
-            {"sku": "MIL-M-OXFORD-BLK-42", "option1": "Black", "option2": "42", "cost_price": 185.00}
+            {"sku": "MIL-M-OXFORD-BRN-43", "option1": "Brown", "option2": "43", "cost_price": 185.00},
+            {"sku": "MIL-M-OXFORD-BRN-44", "option1": "Brown", "option2": "44", "cost_price": 185.00},
+            {"sku": "MIL-M-OXFORD-BRN-45", "option1": "Brown", "option2": "45", "cost_price": 185.00}
         ]
     },
     {
@@ -201,10 +221,12 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"src": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
+            {"sku": "TUS-M-MONK-BRN-40", "option1": "Brown", "option2": "40", "cost_price": 195.00},
             {"sku": "TUS-M-MONK-BRN-41", "option1": "Brown", "option2": "41", "cost_price": 195.00},
             {"sku": "TUS-M-MONK-BRN-42", "option1": "Brown", "option2": "42", "cost_price": 195.00},
-            {"sku": "TUS-M-MONK-BLK-41", "option1": "Black", "option2": "41", "cost_price": 195.00},
-            {"sku": "TUS-M-MONK-BLK-42", "option1": "Black", "option2": "42", "cost_price": 195.00}
+            {"sku": "TUS-M-MONK-BRN-43", "option1": "Brown", "option2": "43", "cost_price": 195.00},
+            {"sku": "TUS-M-MONK-BRN-44", "option1": "Brown", "option2": "44", "cost_price": 195.00},
+            {"sku": "TUS-M-MONK-BRN-45", "option1": "Brown", "option2": "45", "cost_price": 195.00}
         ]
     },
     {
@@ -233,10 +255,12 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"src": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800"}
         ],
         "variants": [
+            {"sku": "PUT-M-APEX-BLU-40", "option1": "Blue", "option2": "40", "cost_price": 42.00},
+            {"sku": "PUT-M-APEX-BLU-41", "option1": "Blue", "option2": "41", "cost_price": 42.00},
             {"sku": "PUT-M-APEX-BLU-42", "option1": "Blue", "option2": "42", "cost_price": 42.00},
             {"sku": "PUT-M-APEX-BLU-43", "option1": "Blue", "option2": "43", "cost_price": 42.00},
-            {"sku": "PUT-M-APEX-BLK-42", "option1": "Black", "option2": "42", "cost_price": 42.00},
-            {"sku": "PUT-M-APEX-BLK-43", "option1": "Black", "option2": "43", "cost_price": 42.00}
+            {"sku": "PUT-M-APEX-BLU-44", "option1": "Blue", "option2": "44", "cost_price": 42.00},
+            {"sku": "PUT-M-APEX-BLU-45", "option1": "Blue", "option2": "45", "cost_price": 42.00}
         ]
     },
     {
