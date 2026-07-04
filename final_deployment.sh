@@ -71,6 +71,7 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
     \"strategy_type\": \"dockerfile\",
     \"strategy_size\": \"medium\",
     \"output_image\": \"$REGISTRY_SERVER/$NAMESPACE/$IMAGE_NAME:latest\",
+    \"source_secret\": \"retail-swarm-git-auth\",
     \"output_secret\": \"retail-swarm-registry-secret\"
   }" | python3 -m json.tool
 
