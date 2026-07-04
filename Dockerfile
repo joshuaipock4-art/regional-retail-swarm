@@ -20,6 +20,7 @@ WORKDIR /idm
 # Copy the source folders explicitly
 COPY idm/ /idm/
 COPY core_engine.py /idm/
+COPY bootstrap.sh /idm/
 COPY agent_0_trend.py /idm/
 COPY agent_1_source.py /idm/
 COPY agent_4_storefront.py /idm/

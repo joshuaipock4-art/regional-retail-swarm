@@ -1,37 +1,49 @@
 import logging
 import time
+import signal
+import sys
+from agent_0_trend import TrendScout
+from agent_1_source import SourcingAgent
+from agent_4_storefront import StorefrontManager
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - [CORE] - %(message)s')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - [CORE DAEMON] - %(message)s')
 
-class SwarmEngine:
+class SwarmDaemon:
     def __init__(self):
-        logging.info("Initializing rebuilt Swarm Engine.")
-    def run_agent_0_trend_scout(self):
-        logging.info("[Agent 0: Trend Scout] Searching for high-demand products...")
-        # Simulated logic: Finding a hot item
-        time.sleep(2)
-        item_data = {"product_name": "Viral TikTok Item", "demand": "High", "niche": "Tech Accessories"}
-        logging.info(f"[Agent 0] High-demand item identified: {item_data['product_name']}")
-        return item_data
-    def run_agent_1_sourcing(self, item_data):
-        logging.info(f"[Agent 1: Sourcing] Locking supplier pipeline for {item_data['product_name']}...")
-        time.sleep(2)
-        # Simulated logic: Securing supply
-        supplier_data = {"supplier_status": "Secured", "margin": "65%", "stock": "Available"}
-        logging.info(f"[Agent 1] Pipeline locked. Margin verified at {supplier_data['margin']}.")
-        return {**item_data, **supplier_data}
-    def run_agent_4_storefront(self, product_payload):
-        logging.info(f"[Agent 4: Storefront] Pushing {product_payload['product_name']} to Shopify via Admin API...")
-        # Simulated logic: Publishing to store
-        logging.info(f"[Agent 4] Product live. Ready for Agent 2 (Marketer) to drive traffic.")
-        return True
-    def execute_sales_pipeline(self):
-        logging.info("--- TRIGGERING AUTOMATED SALES PIPELINE ---")
-        viral_item = self.run_agent_0_trend_scout()
-        sourced_item = self.run_agent_1_sourcing(viral_item)
-        self.run_agent_4_storefront(sourced_item)
-        logging.info("--- PIPELINE CYCLE COMPLETE ---")
+        self.running = True
+        self.trend_scout = TrendScout()
+        self.sourcing_agent = SourcingAgent()
+        self.storefront = StorefrontManager()
+        # Signal handling for graceful shutdown by Supervisor
+        signal.signal(signal.SIGINT, self.shutdown)
+        signal.signal(signal.SIGTERM, self.shutdown)
+
+    def shutdown(self, signum, frame):
+        logging.info(f"Received signal {signum}. Initiating graceful shutdown...")
+        self.running = False
+
+    def run_cycle(self):
+        try:
+            logging.info("--- STARTING SALES PIPELINE CYCLE ---")
+            trend = self.trend_scout.scrape_trends()
+            if trend:
+                source = self.sourcing_agent.source_item(trend)
+                if source:
+                    self.storefront.publish_product(source)
+            logging.info("--- CYCLE COMPLETE ---")
+        except Exception as e:
+            logging.error(f"Cycle failed: {e}")
+            # Backoff before retrying to prevent rapid error loops
+            time.sleep(10)
+
+    def start(self):
+        logging.info("Swarm Engine Daemon started.")
+        while self.running:
+            self.run_cycle()
+            # Heartbeat throttle to comply with API rate limits
+            time.sleep(60)
+        logging.info("Swarm Engine Daemon stopped safely.")
 
 if __name__ == "__main__":
-    engine = SwarmEngine()
-    engine.execute_sales_pipeline()
+    daemon = SwarmDaemon()
+    daemon.start()
