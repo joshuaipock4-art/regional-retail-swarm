@@ -69,7 +69,7 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
     \"source_url\": \"$REPO_URL\",
     \"source_revision\": \"shopify-integration-822303029735242017\",
     \"strategy_type\": \"dockerfile\",
-    \"strategy_size\": \"small\",
+    \"strategy_size\": \"medium\",
     \"output_image\": \"$REGISTRY_SERVER/$NAMESPACE/$IMAGE_NAME:latest\",
     \"output_secret\": \"retail-swarm-registry-secret\"
   }" | python3 -m json.tool
