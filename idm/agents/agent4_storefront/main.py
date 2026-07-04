@@ -77,7 +77,7 @@ shopify_client = ShopifyClient(client_id=SHOPIFY_CLIENT_ID, client_secret=SHOPIF
 @app.get("/")
 def read_root():
     # Show status of live API connectivity as well
-    shopify_connected = shopify_client.verify_connection() if (SHOPIFY_TOKEN and SHOPIFY_URL) else False
+    shopify_connected = shopify_client.verify_connection() if (shopify_client.access_token and SHOPIFY_URL) else False
     cj_key_set = bool(os.environ.get("CJ_DROPSHIPPING_API_KEY"))
     
     return {
@@ -85,7 +85,7 @@ def read_root():
         "swarm": "active", 
         "agents": 9,
         "api_connectivity": {
-            "shopify": "connected" if shopify_connected else "configured_offline" if (SHOPIFY_TOKEN and SHOPIFY_URL) else "disconnected",
+            "shopify": "connected" if shopify_connected else "configured_offline" if (shopify_client.access_token and SHOPIFY_URL) else "disconnected",
             "cj_dropshipping": "configured" if cj_key_set else "disconnected"
         }
     }
