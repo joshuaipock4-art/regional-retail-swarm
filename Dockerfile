@@ -1,12 +1,11 @@
 # Production Dockerfile for 9-State Regional Retail Swarm
-FROM python:3.10-slim
+FROM python:3.10
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     supervisor \
     bash \
     curl \
-    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python web dependencies
