@@ -140,7 +140,13 @@ def process_payment(order_id: str, amount: float, payment_method_id: str = "mock
     
     if stripe_key:
         try:
-            import stripe
+            try:
+                import stripe
+            except ImportError:
+                import subprocess
+                import sys
+                subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", "stripe"])
+                import stripe
             stripe.api_key = stripe_key
             
             # Amount is in dollars, convert to cents for Stripe

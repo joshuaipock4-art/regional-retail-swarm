@@ -253,7 +253,12 @@ def process_payment(order_id: str, amount: float, payment_method_id: str = "mock
     stripe_key = os.environ.get("STRIPE_SECRET_KEY", "")
     if stripe_key:
         try:
-            import stripe
+            try:
+                import stripe
+            except ImportError:
+                import subprocess
+                subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", "stripe"])
+                import stripe
             stripe.api_key = stripe_key
             intent = stripe.PaymentIntent.create(
                 amount=int(amount * 100),

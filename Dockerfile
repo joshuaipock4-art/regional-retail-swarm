@@ -1,17 +1,17 @@
 # Production Dockerfile for 9-State Regional Retail Swarm
-FROM python:3.10
+FROM python:3.10-slim
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     supervisor \
     bash \
     curl \
+    python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python web dependencies
 RUN pip3 install --no-cache-dir fastapi uvicorn requests
 RUN pip3 install --no-cache-dir ShopifyAPI
-RUN pip3 install --no-cache-dir stripe
 
 # Set working directory
 WORKDIR /idm
