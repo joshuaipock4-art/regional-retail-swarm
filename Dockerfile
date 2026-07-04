@@ -15,8 +15,8 @@ RUN pip3 install fastapi uvicorn requests ShopifyAPI stripe
 # Set working directory
 WORKDIR /idm
 
-# Copy the entire idm directory
-COPY idm/ /idm/
+# Copy the entire repository
+COPY . /idm/
 
 # Ensure log directory exists
 RUN mkdir -p /idm/system/logs
