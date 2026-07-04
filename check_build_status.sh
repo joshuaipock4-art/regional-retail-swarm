@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source .env
+source .env 2>/dev/null || true
+export REGION="${REGION:-us-south}"
 
 TOKEN_RESPONSE=$(curl -s -X POST "https://iam.cloud.ibm.com/identity/token" \
   -H "Content-Type: application/x-www-form-urlencoded" \

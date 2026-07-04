@@ -11,7 +11,7 @@ terraform {
 }
 
 provider "ibm" {
-  region = "jp-tok"
+  region = "us-south"
 }
 
 variable "resource_group_id" {
@@ -26,7 +26,7 @@ resource "ibm_is_vpc" "swarm_vpc" {
 resource "ibm_is_subnet" "swarm_subnet" {
   name                     = "online-retail-swarm-subnet"
   vpc                      = ibm_is_vpc.swarm_vpc.id
-  zone                     = "jp-tok-1"
+  zone                     = "us-south-1"
   total_ipv4_address_count = 16
   resource_group           = var.resource_group_id
 }
@@ -44,7 +44,7 @@ data "ibm_is_image" "ubuntu" {
 resource "ibm_is_instance" "swarm_instance" {
   name           = "online-retail-swarm-node"
   vpc            = ibm_is_vpc.swarm_vpc.id
-  zone           = "jp-tok-1"
+  zone           = "us-south-1"
   keys           = [ibm_is_ssh_key.swarm_ssh_key.id]
   image          = data.ibm_is_image.ubuntu.id
   profile        = "cx2-2x4"
@@ -104,6 +104,7 @@ AGENT_NAMES=(
     "agent6_post_purchase"
     "agent7_inventory"
     "agent8_analytics"
+    "agent10_competitor_analyst"
 )
 
 PYTHON_TEMPLATE='import time
@@ -125,6 +126,7 @@ except KeyboardInterrupt:
 
 for i in "${!AGENT_NAMES[@]}"; do
     NAME="${AGENT_NAMES[$i]}"
+    IDX=$(echo "$NAME" | grep -o -E '[0-9]+')
     DIR="/idm/agents/$NAME"
     
     echo "mkdir -p $DIR"
@@ -135,21 +137,21 @@ for i in "${!AGENT_NAMES[@]}"; do
     
     echo "cat << 'INNER_EOF' > $DIR/bootstrap.sh"
     echo "#!/usr/bin/env bash"
-    echo "export AGENT_ID=\"agent$i\""
+    echo "export AGENT_ID=\"agent$IDX\""
     echo "export AGENT_ROLE=\"$NAME\""
     echo "source /idm/system/env.sh"
     echo "python3 -u $DIR/main.py"
     echo "INNER_EOF"
     echo "chmod +x $DIR/bootstrap.sh"
     
-    echo "cat << 'INNER_EOF' > /idm/system/supervisor/agent$i.conf"
-    echo "[program:agent$i]"
+    echo "cat << 'INNER_EOF' > /idm/system/supervisor/agent$IDX.conf"
+    echo "[program:agent$IDX]"
     echo "command=bash $DIR/bootstrap.sh"
     echo "directory=$DIR"
     echo "autostart=true"
     echo "autorestart=true"
-    echo "stdout_logfile=/idm/system/logs/agent$i.log"
-    echo "stderr_logfile=/idm/system/logs/agent$i_error.log"
+    echo "stdout_logfile=/idm/system/logs/agent$IDX.log"
+    echo "stderr_logfile=/idm/system/logs/agent$IDX_error.log"
     echo "INNER_EOF"
 done
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source .env
+source .env 2>/dev/null || true
+export REGION="${REGION:-us-south}"
 RUN_NAME="retail-swarm-final-run-1779683030"
 
 # 1. Get Access Token

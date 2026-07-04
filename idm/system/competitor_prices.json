@@ -1,0 +1,218 @@
+{
+  "TUS-W-HEEL-RED-37": {
+    "sku": "TUS-W-HEEL-RED-37",
+    "lowest_price": 260.0,
+    "market_prices": [
+      275.0,
+      260.0,
+      280.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.732327
+  },
+  "TUS-W-HEEL-RED-38": {
+    "sku": "TUS-W-HEEL-RED-38",
+    "lowest_price": 265.0,
+    "market_prices": [
+      275.0,
+      265.0,
+      285.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323341
+  },
+  "TUS-W-HEEL-BLK-37": {
+    "sku": "TUS-W-HEEL-BLK-37",
+    "lowest_price": 258.0,
+    "market_prices": [
+      270.0,
+      258.0,
+      275.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.732336
+  },
+  "TUS-W-HEEL-BLK-38": {
+    "sku": "TUS-W-HEEL-BLK-38",
+    "lowest_price": 262.0,
+    "market_prices": [
+      270.0,
+      262.0,
+      278.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323377
+  },
+  "JIN-W-AERO-WHT-36": {
+    "sku": "JIN-W-AERO-WHT-36",
+    "lowest_price": 42.0,
+    "market_prices": [
+      45.0,
+      42.0,
+      48.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.732339
+  },
+  "JIN-W-AERO-WHT-37": {
+    "sku": "JIN-W-AERO-WHT-37",
+    "lowest_price": 50.0,
+    "market_prices": [
+      52.0,
+      50.0,
+      55.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323403
+  },
+  "JIN-W-AERO-GRY-36": {
+    "sku": "JIN-W-AERO-GRY-36",
+    "lowest_price": 44.5,
+    "market_prices": [
+      48.0,
+      44.5,
+      49.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323418
+  },
+  "JIN-W-AERO-GRY-37": {
+    "sku": "JIN-W-AERO-GRY-37",
+    "lowest_price": 52.0,
+    "market_prices": [
+      54.0,
+      52.0,
+      56.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323468
+  },
+  "MIL-M-OXFORD-BRN-41": {
+    "sku": "MIL-M-OXFORD-BRN-41",
+    "lowest_price": 198.0,
+    "market_prices": [
+      210.0,
+      198.0,
+      220.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.732348
+  },
+  "MIL-M-OXFORD-BRN-42": {
+    "sku": "MIL-M-OXFORD-BRN-42",
+    "lowest_price": 205.0,
+    "market_prices": [
+      215.0,
+      205.0,
+      225.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323534
+  },
+  "MIL-M-OXFORD-BLK-41": {
+    "sku": "MIL-M-OXFORD-BLK-41",
+    "lowest_price": 195.0,
+    "market_prices": [
+      208.0,
+      195.0,
+      215.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323546
+  },
+  "MIL-M-OXFORD-BLK-42": {
+    "sku": "MIL-M-OXFORD-BLK-42",
+    "lowest_price": 188.0,
+    "market_prices": [
+      192.0,
+      188.0,
+      199.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323563
+  },
+  "PUT-M-APEX-BLU-42": {
+    "sku": "PUT-M-APEX-BLU-42",
+    "lowest_price": 55.0,
+    "market_prices": [
+      58.0,
+      55.0,
+      62.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323577
+  },
+  "PUT-M-APEX-BLU-43": {
+    "sku": "PUT-M-APEX-BLU-43",
+    "lowest_price": 57.0,
+    "market_prices": [
+      60.0,
+      57.0,
+      65.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323587
+  },
+  "PUT-M-APEX-BLK-42": {
+    "sku": "PUT-M-APEX-BLK-42",
+    "lowest_price": 53.5,
+    "market_prices": [
+      56.0,
+      53.5,
+      59.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.73236
+  },
+  "PUT-M-APEX-BLK-43": {
+    "sku": "PUT-M-APEX-BLK-43",
+    "lowest_price": null,
+    "market_prices": [
+      560.0,
+      530.0,
+      590.0
+    ],
+    "region_scope": "United States",
+    "exclusive": true,
+    "last_updated": 1783012830.7323902
+  },
+  "FLO-WLT-TAN-OS": {
+    "sku": "FLO-WLT-TAN-OS",
+    "lowest_price": 78.0,
+    "market_prices": [
+      85.0,
+      78.0,
+      89.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323918
+  },
+  "FLO-WLT-BLK-OS": {
+    "sku": "FLO-WLT-BLK-OS",
+    "lowest_price": 68.0,
+    "market_prices": [
+      72.0,
+      68.0,
+      75.0
+    ],
+    "region_scope": "United States",
+    "exclusive": false,
+    "last_updated": 1783012830.7323933
+  }
+}

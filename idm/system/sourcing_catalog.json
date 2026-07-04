@@ -1,0 +1,181 @@
+[
+  {
+    "title": "Tuscany Velvet Hand-Stitched Stiletto Heels",
+    "body_html": "<p><strong>Material:</strong> Premium Italian velvet upper, full-grain Tuscan calfskin leather lining, hand-stitched leather sole.</p><p><strong>Source:</strong> Direct Italy/Tuscany artisan networks.</p><p><strong>Description:</strong> Exquisite hand-crafted stiletto heels featuring premium velvet wrap, designed for unmatched elegance and structural durability.</p>",
+    "vendor": "Tuscany Artisan Networks",
+    "product_type": "Women's Dress Shoes & Luxury Heels",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1596702994230-a885f67a6d8d?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "TUS-W-HEEL-RED-37",
+        "option1": "Red",
+        "option2": "37",
+        "cost_price": 245.0
+      },
+      {
+        "sku": "TUS-W-HEEL-RED-38",
+        "option1": "Red",
+        "option2": "38",
+        "cost_price": 245.0
+      },
+      {
+        "sku": "TUS-W-HEEL-BLK-37",
+        "option1": "Black",
+        "option2": "37",
+        "cost_price": 245.0
+      },
+      {
+        "sku": "TUS-W-HEEL-BLK-38",
+        "option1": "Black",
+        "option2": "38",
+        "cost_price": 245.0
+      }
+    ]
+  },
+  {
+    "title": "AeroKnit Performance Sneaker V2",
+    "body_html": "<p><strong>Material:</strong> High-tensile engineered Primeknit upper, responsive foam cushioning, reinforced TPU stabilizer heel.</p><p><strong>Source:</strong> Jinjiang/Putian OEM factory hubs.</p><p><strong>Description:</strong> Ultra-lightweight sports sneaker designed for cross-training and competitive running, offering dynamic arch support and maximum breathability.</p>",
+    "vendor": "Jinjiang OEM Factory Hub",
+    "product_type": "Women's Premium Athletic Sneakers",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "JIN-W-AERO-WHT-36",
+        "option1": "White",
+        "option2": "36",
+        "cost_price": 38.5
+      },
+      {
+        "sku": "JIN-W-AERO-WHT-37",
+        "option1": "White",
+        "option2": "37",
+        "cost_price": 38.5
+      },
+      {
+        "sku": "JIN-W-AERO-GRY-36",
+        "option1": "Grey",
+        "option2": "36",
+        "cost_price": 38.5
+      },
+      {
+        "sku": "JIN-W-AERO-GRY-37",
+        "option1": "Grey",
+        "option2": "37",
+        "cost_price": 38.5
+      }
+    ]
+  },
+  {
+    "title": "Milano Hand-Burnished Oxford Dress Shoes",
+    "body_html": "<p><strong>Material:</strong> Hand-burnished full-grain Italian calfskin leather, traditional Blake-stitched leather sole, stacked leather heel.</p><p><strong>Source:</strong> Direct Italian B2B warehouse APIs.</p><p><strong>Description:</strong> Classic formal Oxfords featuring elegant closed-lace design and detailed broguing. Perfectly suited for black-tie affairs and premium corporate wear.</p>",
+    "vendor": "Milano B2B Warehouses",
+    "product_type": "Men's Formal Dress Shoes",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "MIL-M-OXFORD-BRN-41",
+        "option1": "Brown",
+        "option2": "41",
+        "cost_price": 185.0
+      },
+      {
+        "sku": "MIL-M-OXFORD-BRN-42",
+        "option1": "Brown",
+        "option2": "42",
+        "cost_price": 185.0
+      },
+      {
+        "sku": "MIL-M-OXFORD-BLK-41",
+        "option1": "Black",
+        "option2": "41",
+        "cost_price": 185.0
+      },
+      {
+        "sku": "MIL-M-OXFORD-BLK-42",
+        "option1": "Black",
+        "option2": "42",
+        "cost_price": 185.0
+      }
+    ]
+  },
+  {
+    "title": "Apex Trail Runner Pro",
+    "body_html": "<p><strong>Material:</strong> Heavy-duty ballistic nylon mesh, protective TPU overlays, high-traction Vibram rubber outsole, dual-density EVA midsole.</p><p><strong>Source:</strong> Jinjiang/Putian OEM factory hubs.</p><p><strong>Description:</strong> Rugged trail-running sneaker engineered to withstand demanding outdoor terrain while providing high-rebound cushioning.</p>",
+    "vendor": "Putian OEM Factory Hub",
+    "product_type": "Men's Premium Athletic Sneakers",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "PUT-M-APEX-BLU-42",
+        "option1": "Blue",
+        "option2": "42",
+        "cost_price": 42.0
+      },
+      {
+        "sku": "PUT-M-APEX-BLU-43",
+        "option1": "Blue",
+        "option2": "43",
+        "cost_price": 42.0
+      },
+      {
+        "sku": "PUT-M-APEX-BLK-42",
+        "option1": "Black",
+        "option2": "42",
+        "cost_price": 42.0
+      },
+      {
+        "sku": "PUT-M-APEX-BLK-43",
+        "option1": "Black",
+        "option2": "43",
+        "cost_price": 42.0
+      }
+    ]
+  },
+  {
+    "title": "Florentine Vachetta Leather Bifold Wallet",
+    "body_html": "<p><strong>Material:</strong> Tuscan vegetable-tanned Vachetta leather, hand-waxed linen thread stitching, hand-finished burnished edges.</p><p><strong>Source:</strong> Direct Italian artisan leather crafter networks.</p><p><strong>Description:</strong> A premium minimalist bifold wallet that will develop a rich, unique patina over time. Features 6 card slots and a dedicated bill compartment.</p>",
+    "vendor": "Florentine Crafter Networks",
+    "product_type": "Handmade Italian Leather Wallets & Small Leather Goods",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1627124118123-e4d31319d11e?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "FLO-WLT-TAN-OS",
+        "option1": "Tan",
+        "option2": "One Size",
+        "cost_price": 65.0
+      },
+      {
+        "sku": "FLO-WLT-BLK-OS",
+        "option1": "Black",
+        "option2": "One Size",
+        "cost_price": 65.0
+      }
+    ]
+  }
+]

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-source .env
+source .env 2>/dev/null || true
+export REGION="${REGION:-us-south}"
 
 # 1. Get Access Token
 TOKEN_RESPONSE=$(curl -s -X POST "https://iam.cloud.ibm.com/identity/token" \
@@ -10,5 +11,5 @@ TOKEN_RESPONSE=$(curl -s -X POST "https://iam.cloud.ibm.com/identity/token" \
 ACCESS_TOKEN=$(echo $TOKEN_RESPONSE | sed -n 's/.*"access_token":"\([^"]*\)".*/\1/p')
 
 # 2. List Build Runs
-curl -s -X GET "https://api.jp-tok.codeengine.cloud.ibm.com/v2/projects/986156ac-6823-4b7c-ab64-50a6eae46452/build_runs" \
+curl -s -X GET "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PROJECT_ID}/build_runs" \
   -H "Authorization: Bearer $ACCESS_TOKEN" | python3 -m json.tool

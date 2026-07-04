@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-source .env
+source .env 2>/dev/null || true
 # Update Application with ETag handling
 set -e
+
+export REGION="${REGION:-us-south}"
 
 APP_NAME="online-retail-swarm-app"
 
@@ -26,7 +28,7 @@ curl -s -X PATCH "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${P
   -H "Content-Type: application/json" \
   -H "If-Match: $ETAG" \
   -d "{
-    \"image_reference\": \"jp.icr.io/online_retail_swarm/retail-swarm:latest\"
+    \"image_reference\": \"us.icr.io/online_retail_swarm/retail-swarm:latest\"
   }" | python3 -m json.tool
 
 echo "--------------------------------------------------------"
