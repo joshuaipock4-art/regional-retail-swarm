@@ -60,6 +60,7 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
     \"name\": \"retail-swarm-github-build\",
     \"source_type\": \"git\",
     \"source_url\": \"$REPO_URL\",
+    \"source_revision\": \"shopify-integration-822303029735242017\",
     \"source_secret\": \"retail-swarm-git-auth\",
     \"strategy_type\": \"dockerfile\",
     \"output_image\": \"$REGISTRY_SERVER/$NAMESPACE/$IMAGE_NAME:latest\",
