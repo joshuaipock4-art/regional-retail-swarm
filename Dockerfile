@@ -15,8 +15,12 @@ RUN pip3 install fastapi uvicorn requests ShopifyAPI stripe
 # Set working directory
 WORKDIR /idm
 
-# Copy the entire repository
-COPY . /idm/
+# Copy the source folders explicitly
+COPY idm/ /idm/
+COPY core_engine.py /idm/
+COPY agent_0_trend.py /idm/
+COPY agent_1_source.py /idm/
+COPY agent_4_storefront.py /idm/
 
 # Ensure log directory exists
 RUN mkdir -p /idm/system/logs

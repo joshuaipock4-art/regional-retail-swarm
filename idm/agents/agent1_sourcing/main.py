@@ -330,6 +330,66 @@ LUXURY_PRODUCTS_TEMPLATE = [
             {"sku": "SGI-CARD-TAN-OS", "option1": "Tan", "option2": "One Size", "cost_price": 35.00},
             {"sku": "SGI-CARD-BLK-OS", "option1": "Black", "option2": "One Size", "cost_price": 35.00}
         ]
+    },
+    # ==========================================
+    # --- HANDMADE ITALIAN LEATHER PURSES & HANDBAGS (5 Items) ---
+    # ==========================================
+    {
+        "title": "Florence Calfskin Classica Handbag",
+        "body_html": "<p><strong>Material:</strong> Full-grain hand-burnished Tuscan calfskin leather, structured carry handle, detachable shoulder strap, soft lambskin lining.</p><p><strong>Description:</strong> A timeless luxury handbag showcasing classical Florentine leather craftsmanship and elegant structured carry handle.</p>",
+        "vendor": "Florence Artisan Networks",
+        "product_type": "Handmade Italian Leather Purses & Handbags",
+        "images": [{"src": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800"}],
+        "variants": [
+            {"sku": "FLO-PURSE-BRN-OS", "option1": "Sienna Brown", "option2": "One Size", "cost_price": 350.00},
+            {"sku": "FLO-PURSE-BLK-OS", "option1": "Midnight Black", "option2": "One Size", "cost_price": 350.00},
+            {"sku": "FLO-PURSE-TAN-OS", "option1": "Tuscan Tan", "option2": "One Size", "cost_price": 350.00}
+        ]
+    },
+    {
+        "title": "Siena Woven Leather Tote Bag",
+        "body_html": "<p><strong>Material:</strong> Hand-woven strips of premium Saffiano calfskin, spacious open compartment, interior zip pocket.</p><p><strong>Description:</strong> Large luxury tote featuring beautiful hand-woven panels and highly durable calfskin, perfect for daily business or travel.</p>",
+        "vendor": "Siena Workshop Collectives",
+        "product_type": "Handmade Italian Leather Purses & Handbags",
+        "images": [{"src": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800"}],
+        "variants": [
+            {"sku": "SIE-TOTE-BLK-OS", "option1": "Black", "option2": "One Size", "cost_price": 290.00},
+            {"sku": "SIE-TOTE-BRN-OS", "option1": "Tan Brown", "option2": "One Size", "cost_price": 290.00}
+        ]
+    },
+    {
+        "title": "Venetian Patent Leather Shoulder Bag",
+        "body_html": "<p><strong>Material:</strong> High-gloss patent leather upper, polished gold-tone metal chain shoulder strap, secure interlocking clasp.</p><p><strong>Description:</strong> Elegant Venetian evening shoulder bag with a brilliant patent finish and iconic gold-tone hardware detail.</p>",
+        "vendor": "Veneto Artisan Ateliers",
+        "product_type": "Handmade Italian Leather Purses & Handbags",
+        "images": [{"src": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800"}],
+        "variants": [
+            {"sku": "VEN-BAG-RED-OS", "option1": "Ruby Red", "option2": "One Size", "cost_price": 310.00},
+            {"sku": "VEN-BAG-BLK-OS", "option1": "Midnight Black", "option2": "One Size", "cost_price": 310.00}
+        ]
+    },
+    {
+        "title": "Amalfi Coast Canvas Travel Duffel",
+        "body_html": "<p><strong>Material:</strong> Heavyweight waterproof cotton canvas, full-grain leather base and trim support, heavy duty brass zippers.</p><p><strong>Description:</strong> Lightweight yet rugged weekend travel bag designed for coastal excursions and elegant getaways.</p>",
+        "vendor": "Campania Leather Crafters",
+        "product_type": "Handmade Italian Leather Purses & Handbags",
+        "images": [{"src": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800"}],
+        "variants": [
+            {"sku": "AMA-DUFFEL-BEG-OS", "option1": "Beige", "option2": "One Size", "cost_price": 220.00},
+            {"sku": "AMA-DUFFEL-OLV-OS", "option1": "Olive", "option2": "One Size", "cost_price": 220.00}
+        ]
+    },
+    {
+        "title": "Roma Hand-Stitched Leather Envelope Clutch",
+        "body_html": "<p><strong>Material:</strong> Soft hand-stitched nappa calfskin, envelope flap closure, magnetic button clasp, interior card slots.</p><p><strong>Description:</strong> Sleek and minimalist envelope clutch bag designed for night events, formal dinners, and wedding parties.</p>",
+        "vendor": "Lazio Shoe Workshops",
+        "product_type": "Handmade Italian Leather Purses & Handbags",
+        "images": [{"src": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800"}],
+        "variants": [
+            {"sku": "ROM-CLUTCH-GLD-OS", "option1": "Champagne Gold", "option2": "One Size", "cost_price": 180.00},
+            {"sku": "ROM-CLUTCH-SLV-OS", "option1": "Silver", "option2": "One Size", "cost_price": 180.00},
+            {"sku": "ROM-CLUTCH-BLK-OS", "option1": "Black", "option2": "One Size", "cost_price": 180.00}
+        ]
     }
 ]
 
@@ -351,7 +411,8 @@ def build_sourcing_catalog():
             {"type": "Women's Premium Athletic Sneakers", "keyword": "women premium athletic sneakers"},
             {"type": "Men's Formal Dress Shoes", "keyword": "men formal dress shoes oxford"},
             {"type": "Men's Premium Athletic Sneakers", "keyword": "men premium athletic sneakers running"},
-            {"type": "Handmade Italian Leather Wallets & Small Leather Goods", "keyword": "handmade leather wallet bifold"}
+            {"type": "Handmade Italian Leather Wallets & Small Leather Goods", "keyword": "handmade leather wallet bifold"},
+            {"type": "Handmade Italian Leather Purses & Handbags", "keyword": "handmade leather purse handbag"}
         ]
         
         for cat in categories:
