@@ -89,8 +89,19 @@ def main_loop():
         except Exception as e:
             logger.error("Unhandled exception in pipeline: %s", e)
             logger.error(traceback.format_exc())
-            time.sleep(backoff)
+            sleep_for = min(backoff, max_backoff)
+            logger.info("Backing off for %s seconds before retrying", sleep_for)
+            expiry = time.time() + sleep_for
+            while running and time.time() < expiry:
+                time.sleep(1)
             backoff = min(backoff * 2, max_backoff)
+    logger.info("Main loop exiting, cleaning up and shutting down gracefully.")
 
 if __name__ == "__main__":
+    try:
+        os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+    except Exception:
+        pass
+    logger.info("Starting core engine (interval=%s s)", INTERVAL)
     main_loop()
+    logger.info("Core engine stopped.")
