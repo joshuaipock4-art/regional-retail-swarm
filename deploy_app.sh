@@ -81,10 +81,10 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
         \"reference\": \"ecommerce-secrets\"
       }
     ],
-    \"run_arguments\": [
-      \"python3\",
-      \"-c\",
-      \"import sys; sys.path.append('idm/agents/agent1_sourcing'); import main; main.build_sourcing_catalog(); sys.path.append('idm/agents/agent10_competitor_analyst'); import main as m10; m10.scan_competitor_prices(); sys.path.append('idm/agents/agent7_inventory'); import main as m7; m7.build_shopify_catalog()\"
+    "run_arguments": [
+      "python3",
+      "-c",
+      "import sys; sys.path.insert(0, 'idm/agents/agent1_sourcing'); import main as m1; m1.build_sourcing_catalog(); sys.modules.pop('main'); sys.path.insert(0, 'idm/agents/agent10_competitor_analyst'); import main as m10; m10.scan_competitor_prices(); sys.modules.pop('main'); sys.path.insert(0, 'idm/agents/agent7_inventory'); import main as m7; m7.build_shopify_catalog()"
     ]
   }" > /dev/null || true
 
