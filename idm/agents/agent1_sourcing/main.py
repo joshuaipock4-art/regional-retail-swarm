@@ -52,13 +52,24 @@ class CJDropshippingClient:
             print(f"[CJDropshippingClient] Authentication connection error: {e}")
             return False
 
-    def search_products(self, keyword):
+    def search_products(self, keyword, size=3):
         if not self.access_token and not self.authenticate():
             return {"error": "Authentication required"}
         
-        url = f"{self.base_url}/v1/product/list"
+        url = f"{self.base_url}/v1/product/listV2"
         try:
-            response = requests.get(url, params={"productName": keyword}, headers=self.headers, timeout=10)
+            response = requests.get(url, params={"keyWord": keyword, "page": 1, "size": size}, headers=self.headers, timeout=10)
+            return response.json()
+        except Exception as e:
+            return {"error": str(e)}
+
+    def get_variants(self, pid):
+        if not self.access_token and not self.authenticate():
+            return {"error": "Authentication required"}
+        
+        url = f"{self.base_url}/v1/product/variant/query"
+        try:
+            response = requests.get(url, params={"pid": pid}, headers=self.headers, timeout=10)
             return response.json()
         except Exception as e:
             return {"error": str(e)}
@@ -307,17 +318,101 @@ def build_sourcing_catalog():
     os.makedirs(sys_dir, exist_ok=True)
     target_path = os.path.join(sys_dir, "sourcing_catalog.json")
     
-    print(f"[RUN] Sourcing luxury footwear and leather goods template...")
+    print(f"[RUN] Sourcing luxury footwear and leather goods...")
+    
+    fetched_products = []
     
     # Try connecting to live CJ Dropshipping chain if API key is provided
-    if CJ_API_KEY:
+    if CJ_API_KEY and cj_client.authenticate():
         print("[RUN] Live CJ Dropshipping connection established. Fetching matching inventory feeds...")
-        # A test query could be executed here, e.g. cj_client.search_products("shoes")
+        
+        categories = [
+            {"type": "Women's Dress Shoes & Luxury Heels", "keyword": "luxury stiletto heels"},
+            {"type": "Women's Premium Athletic Sneakers", "keyword": "women premium athletic sneakers"},
+            {"type": "Men's Formal Dress Shoes", "keyword": "men formal dress shoes oxford"},
+            {"type": "Men's Premium Athletic Sneakers", "keyword": "men premium athletic sneakers running"},
+            {"type": "Handmade Italian Leather Wallets & Small Leather Goods", "keyword": "handmade leather wallet bifold"}
+        ]
+        
+        for cat in categories:
+            print(f"[RUN] Fetching CJ products for keyword: '{cat['keyword']}'...")
+            search_res = cj_client.search_products(cat["keyword"], size=3)
+            
+            # CJ API v2.0 response format checks
+            list_data = None
+            if isinstance(search_res, dict):
+                result_obj = search_res.get("result") or search_res.get("data")
+                if isinstance(result_obj, dict):
+                    list_data = result_obj.get("list")
+            
+            if list_data and isinstance(list_data, list):
+                for p in list_data:
+                    pid = p.get("productId")
+                    title = p.get("productNameEn") or p.get("productName")
+                    image_url = p.get("productImage")
+                    product_sku = p.get("productSku")
+                    
+                    if not pid or not title:
+                        continue
+                        
+                    print(f"[RUN] Fetching variants for CJ Product ID: {pid} ('{title}')")
+                    var_res = cj_client.get_variants(pid)
+                    
+                    variants_list = None
+                    if isinstance(var_res, dict):
+                        variants_list = var_res.get("result") or var_res.get("data")
+                        
+                    shopify_variants = []
+                    if variants_list and isinstance(variants_list, list):
+                        for v in variants_list:
+                            v_sku = v.get("variantSku") or f"{product_sku}-{v.get('productId')}"
+                            cost = float(v.get("totalPrice") or 10.00)
+                            
+                            # Parse variantKey (e.g. "Black-US8" or "White-One Size")
+                            variant_key = v.get("variantKey") or v.get("variantNameEn") or ""
+                            key_parts = variant_key.split("-")
+                            opt1 = key_parts[0] if len(key_parts) > 0 and key_parts[0] else "Default Color"
+                            opt2 = key_parts[1] if len(key_parts) > 1 and key_parts[1] else "One Size"
+                            
+                            shopify_variants.append({
+                                "sku": v_sku,
+                                "option1": opt1,
+                                "option2": opt2,
+                                "cost_price": cost
+                            })
+                            
+                    if not shopify_variants:
+                        # Fallback default variant if query returned nothing
+                        shopify_variants.append({
+                            "sku": product_sku or f"CJ-MOCK-{pid}",
+                            "option1": "Default Color",
+                            "option2": "One Size",
+                            "cost_price": 45.00
+                        })
+                        
+                    fetched_products.append({
+                        "title": title,
+                        "body_html": f"<p>Sourced dynamically from CJ Dropshipping (Product ID: {pid}).</p>",
+                        "vendor": "CJ Dropshipping",
+                        "product_type": cat["type"],
+                        "images": [{"src": image_url}] if image_url else [],
+                        "variants": shopify_variants
+                    })
+            else:
+                print(f"[WARN] No CJ products found for keyword: '{cat['keyword']}' (Response: {search_res})")
+                
+    # Fallback to templates if live fetch returned nothing or was disabled
+    if len(fetched_products) > 0:
+        products_payload = fetched_products
+        print(f"[SUCCESS] Successfully retrieved {len(products_payload)} live products from CJ Dropshipping API.")
+    else:
+        products_payload = LUXURY_PRODUCTS_TEMPLATE
+        print(f"[WARN] Live CJ Dropshipping fetch returned no items. Falling back to the {len(products_payload)} built-in templates.")
         
     try:
         with open(target_path, "w") as f:
-            json.dump(LUXURY_PRODUCTS_TEMPLATE, f, indent=2)
-        print(f"[SUCCESS] Wrote {len(LUXURY_PRODUCTS_TEMPLATE)} sourced products to {target_path}")
+            json.dump(products_payload, f, indent=2)
+        print(f"[SUCCESS] Wrote sourcing catalog to {target_path}")
     except Exception as e:
         print(f"[ERROR] Failed to write sourcing catalog: {e}", file=sys.stderr)
 

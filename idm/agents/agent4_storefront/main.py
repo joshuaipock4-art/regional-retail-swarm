@@ -130,6 +130,69 @@ def process_order(order_id: str, region: str):
         "estimated_delivery": "2-4 business days"
     }
 
+@app.post("/process-payment", operation_id="processPayment")
+def process_payment(order_id: str, amount: float, payment_method_id: str = "mock-card"):
+    """
+    Processes credit card payments for orders using Stripe.
+    Falls back to a secure mockup payment processor if Stripe secret keys are not configured.
+    """
+    stripe_key = os.environ.get("STRIPE_SECRET_KEY", "")
+    
+    if stripe_key:
+        try:
+            import stripe
+            stripe.api_key = stripe_key
+            
+            # Amount is in dollars, convert to cents for Stripe
+            amount_cents = int(amount * 100)
+            
+            intent = stripe.PaymentIntent.create(
+                amount=amount_cents,
+                currency="usd",
+                payment_method=payment_method_id,
+                confirm=True,
+                automatic_payment_methods={
+                    "enabled": True,
+                    "allow_redirects": "never"
+                },
+                metadata={"order_id": order_id}
+            )
+            
+            if intent.status == "succeeded":
+                return {
+                    "payment_provider": "Stripe",
+                    "status": "succeeded",
+                    "transaction_id": intent.id,
+                    "amount": amount,
+                    "order_id": order_id
+                }
+            else:
+                return {
+                    "payment_provider": "Stripe",
+                    "status": intent.status,
+                    "transaction_id": intent.id,
+                    "amount": amount,
+                    "order_id": order_id
+                }
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=f"Stripe Payment Failed: {str(e)}")
+    else:
+        # Secure simulation fallback
+        print(f"[Simulated Payment] Processing payment of ${amount:.2f} for Order {order_id} using {payment_method_id}...")
+        time.sleep(1.0) # simulate network latency
+        
+        # Simple simulated transaction ID
+        simulated_tx_id = f"tx_mock_{int(time.time())}_{order_id[:8]}"
+        
+        return {
+            "payment_provider": "Simulated Gateway",
+            "status": "succeeded",
+            "transaction_id": simulated_tx_id,
+            "amount": amount,
+            "order_id": order_id,
+            "message": "Payment processed successfully via simulated gateway (Stripe not configured)."
+        }
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8080)

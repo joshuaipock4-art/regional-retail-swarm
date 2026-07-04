@@ -9,7 +9,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.743651
   },
   "TUS-W-HEEL-RED-38": {
     "sku": "TUS-W-HEEL-RED-38",
@@ -21,7 +21,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436554
   },
   "TUS-W-HEEL-BLK-37": {
     "sku": "TUS-W-HEEL-BLK-37",
@@ -33,7 +33,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436566
   },
   "TUS-W-HEEL-BLK-38": {
     "sku": "TUS-W-HEEL-BLK-38",
@@ -45,103 +45,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VEN-W-PUMP-BLK-37": {
-    "sku": "VEN-W-PUMP-BLK-37",
-    "lowest_price": 241.5,
-    "market_prices": [
-      253.58,
-      241.5,
-      265.65
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VEN-W-PUMP-BLK-38": {
-    "sku": "VEN-W-PUMP-BLK-38",
-    "lowest_price": 241.5,
-    "market_prices": [
-      253.58,
-      241.5,
-      265.65
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VEN-W-PUMP-SLV-37": {
-    "sku": "VEN-W-PUMP-SLV-37",
-    "lowest_price": 241.5,
-    "market_prices": [
-      253.58,
-      241.5,
-      265.65
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VEN-W-PUMP-SLV-38": {
-    "sku": "VEN-W-PUMP-SLV-38",
-    "lowest_price": 241.5,
-    "market_prices": [
-      253.58,
-      241.5,
-      265.65
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "AMA-W-SAND-GLD-37": {
-    "sku": "AMA-W-SAND-GLD-37",
-    "lowest_price": 201.25,
-    "market_prices": [
-      211.31,
-      201.25,
-      221.38
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "AMA-W-SAND-GLD-38": {
-    "sku": "AMA-W-SAND-GLD-38",
-    "lowest_price": 201.25,
-    "market_prices": [
-      211.31,
-      201.25,
-      221.38
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "AMA-W-SAND-TAN-37": {
-    "sku": "AMA-W-SAND-TAN-37",
-    "lowest_price": 201.25,
-    "market_prices": [
-      211.31,
-      201.25,
-      221.38
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "AMA-W-SAND-TAN-38": {
-    "sku": "AMA-W-SAND-TAN-38",
-    "lowest_price": 201.25,
-    "market_prices": [
-      211.31,
-      201.25,
-      221.38
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436576
   },
   "JIN-W-AERO-WHT-36": {
     "sku": "JIN-W-AERO-WHT-36",
@@ -153,7 +57,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436585
   },
   "JIN-W-AERO-WHT-37": {
     "sku": "JIN-W-AERO-WHT-37",
@@ -165,7 +69,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436593
   },
   "JIN-W-AERO-GRY-36": {
     "sku": "JIN-W-AERO-GRY-36",
@@ -177,7 +81,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436602
   },
   "JIN-W-AERO-GRY-37": {
     "sku": "JIN-W-AERO-GRY-37",
@@ -189,103 +93,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "NOV-W-TRAIN-PNK-36": {
-    "sku": "NOV-W-TRAIN-PNK-36",
-    "lowest_price": 51.75,
-    "market_prices": [
-      54.34,
-      51.75,
-      56.93
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "NOV-W-TRAIN-PNK-37": {
-    "sku": "NOV-W-TRAIN-PNK-37",
-    "lowest_price": 51.75,
-    "market_prices": [
-      54.34,
-      51.75,
-      56.93
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "NOV-W-TRAIN-BLK-36": {
-    "sku": "NOV-W-TRAIN-BLK-36",
-    "lowest_price": 51.75,
-    "market_prices": [
-      54.34,
-      51.75,
-      56.93
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "NOV-W-TRAIN-BLK-37": {
-    "sku": "NOV-W-TRAIN-BLK-37",
-    "lowest_price": 51.75,
-    "market_prices": [
-      54.34,
-      51.75,
-      56.93
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "FLE-W-JOG-GRY-36": {
-    "sku": "FLE-W-JOG-GRY-36",
-    "lowest_price": 40.25,
-    "market_prices": [
-      42.26,
-      40.25,
-      44.28
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "FLE-W-JOG-GRY-37": {
-    "sku": "FLE-W-JOG-GRY-37",
-    "lowest_price": 40.25,
-    "market_prices": [
-      42.26,
-      40.25,
-      44.28
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "FLE-W-JOG-WHT-36": {
-    "sku": "FLE-W-JOG-WHT-36",
-    "lowest_price": 40.25,
-    "market_prices": [
-      42.26,
-      40.25,
-      44.28
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "FLE-W-JOG-WHT-37": {
-    "sku": "FLE-W-JOG-WHT-37",
-    "lowest_price": 40.25,
-    "market_prices": [
-      42.26,
-      40.25,
-      44.28
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436607
   },
   "MIL-M-OXFORD-BRN-41": {
     "sku": "MIL-M-OXFORD-BRN-41",
@@ -297,7 +105,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436619
   },
   "MIL-M-OXFORD-BRN-42": {
     "sku": "MIL-M-OXFORD-BRN-42",
@@ -309,7 +117,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436626
   },
   "MIL-M-OXFORD-BLK-41": {
     "sku": "MIL-M-OXFORD-BLK-41",
@@ -321,7 +129,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436635
   },
   "MIL-M-OXFORD-BLK-42": {
     "sku": "MIL-M-OXFORD-BLK-42",
@@ -333,103 +141,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TUS-M-MONK-BRN-41": {
-    "sku": "TUS-M-MONK-BRN-41",
-    "lowest_price": 224.25,
-    "market_prices": [
-      235.46,
-      224.25,
-      246.68
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TUS-M-MONK-BRN-42": {
-    "sku": "TUS-M-MONK-BRN-42",
-    "lowest_price": 224.25,
-    "market_prices": [
-      235.46,
-      224.25,
-      246.68
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TUS-M-MONK-BLK-41": {
-    "sku": "TUS-M-MONK-BLK-41",
-    "lowest_price": 224.25,
-    "market_prices": [
-      235.46,
-      224.25,
-      246.68
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TUS-M-MONK-BLK-42": {
-    "sku": "TUS-M-MONK-BLK-42",
-    "lowest_price": 224.25,
-    "market_prices": [
-      235.46,
-      224.25,
-      246.68
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "ROM-M-LOAF-TAN-41": {
-    "sku": "ROM-M-LOAF-TAN-41",
-    "lowest_price": 184.0,
-    "market_prices": [
-      193.2,
-      184.0,
-      202.4
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "ROM-M-LOAF-TAN-42": {
-    "sku": "ROM-M-LOAF-TAN-42",
-    "lowest_price": 184.0,
-    "market_prices": [
-      193.2,
-      184.0,
-      202.4
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "ROM-M-LOAF-BLK-41": {
-    "sku": "ROM-M-LOAF-BLK-41",
-    "lowest_price": 184.0,
-    "market_prices": [
-      193.2,
-      184.0,
-      202.4
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "ROM-M-LOAF-BLK-42": {
-    "sku": "ROM-M-LOAF-BLK-42",
-    "lowest_price": 184.0,
-    "market_prices": [
-      193.2,
-      184.0,
-      202.4
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436645
   },
   "PUT-M-APEX-BLU-42": {
     "sku": "PUT-M-APEX-BLU-42",
@@ -441,7 +153,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436652
   },
   "PUT-M-APEX-BLU-43": {
     "sku": "PUT-M-APEX-BLU-43",
@@ -453,7 +165,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.743666
   },
   "PUT-M-APEX-BLK-42": {
     "sku": "PUT-M-APEX-BLK-42",
@@ -465,115 +177,19 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436664
   },
   "PUT-M-APEX-BLK-43": {
     "sku": "PUT-M-APEX-BLK-43",
     "lowest_price": null,
     "market_prices": [
-      56.0,
-      53.0,
-      59.0
+      560.0,
+      530.0,
+      590.0
     ],
     "region_scope": "United States",
     "exclusive": true,
-    "last_updated": 1783012830.7323
-  },
-  "VAP-M-RUN-BLK-42": {
-    "sku": "VAP-M-RUN-BLK-42",
-    "lowest_price": 63.25,
-    "market_prices": [
-      66.41,
-      63.25,
-      69.58
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VAP-M-RUN-BLK-43": {
-    "sku": "VAP-M-RUN-BLK-43",
-    "lowest_price": 63.25,
-    "market_prices": [
-      66.41,
-      63.25,
-      69.58
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VAP-M-RUN-RED-42": {
-    "sku": "VAP-M-RUN-RED-42",
-    "lowest_price": 63.25,
-    "market_prices": [
-      66.41,
-      63.25,
-      69.58
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "VAP-M-RUN-RED-43": {
-    "sku": "VAP-M-RUN-RED-43",
-    "lowest_price": 63.25,
-    "market_prices": [
-      66.41,
-      63.25,
-      69.58
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TER-M-HIKE-GRN-42": {
-    "sku": "TER-M-HIKE-GRN-42",
-    "lowest_price": 55.2,
-    "market_prices": [
-      57.96,
-      55.2,
-      60.72
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TER-M-HIKE-GRN-43": {
-    "sku": "TER-M-HIKE-GRN-43",
-    "lowest_price": 55.2,
-    "market_prices": [
-      57.96,
-      55.2,
-      60.72
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TER-M-HIKE-BRN-42": {
-    "sku": "TER-M-HIKE-BRN-42",
-    "lowest_price": 55.2,
-    "market_prices": [
-      57.96,
-      55.2,
-      60.72
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "TER-M-HIKE-BRN-43": {
-    "sku": "TER-M-HIKE-BRN-43",
-    "lowest_price": 55.2,
-    "market_prices": [
-      57.96,
-      55.2,
-      60.72
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436981
   },
   "FLO-WLT-TAN-OS": {
     "sku": "FLO-WLT-TAN-OS",
@@ -585,7 +201,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7436998
   },
   "FLO-WLT-BLK-OS": {
     "sku": "FLO-WLT-BLK-OS",
@@ -597,54 +213,6 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "SIE-WLT-ZIP-BRN-OS": {
-    "sku": "SIE-WLT-ZIP-BRN-OS",
-    "lowest_price": 97.75,
-    "market_prices": [
-      102.64,
-      97.75,
-      107.53
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "SIE-WLT-ZIP-BLK-OS": {
-    "sku": "SIE-WLT-ZIP-BLK-OS",
-    "lowest_price": 97.75,
-    "market_prices": [
-      102.64,
-      97.75,
-      107.53
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "SGI-CARD-TAN-OS": {
-    "sku": "SGI-CARD-TAN-OS",
-    "lowest_price": 40.25,
-    "market_prices": [
-      42.26,
-      40.25,
-      44.28
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
-  },
-  "SGI-CARD-BLK-OS": {
-    "sku": "SGI-CARD-BLK-OS",
-    "lowest_price": 40.25,
-    "market_prices": [
-      42.26,
-      40.25,
-      44.28
-    ],
-    "region_scope": "United States",
-    "exclusive": false,
-    "last_updated": 1783012830.7323
+    "last_updated": 1783157168.7437005
   }
 }

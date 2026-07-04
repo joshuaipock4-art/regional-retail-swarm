@@ -377,7 +377,7 @@
   },
   {
     "title": "VaporMax Performance Runner",
-    "body_html": "<p><strong>Material:</strong> Engineered warp-knit upper, full-length responsive air cushion unit, high-grip carbon rubber pods.</p><p><strong>Source:</strong> Putian OEM Factory Hub.</p><p><strong>Description:</strong> High-performance athletic sneaker focused on energy return, joint comfort, and dynamic stride speed.</p>",
+    "body_html": "<p><strong>Material:</strong> Engineered warp-knit upper, full-length responsive air cushion unit, high-grip carbon rubber pods.</p><p><strong>Source:</strong> Putian OEM Factory Hub.</p><p># Description: High-performance athletic sneaker focused on energy return, joint comfort, and dynamic stride speed.</p>",
     "vendor": "Putian OEM Factory Hub",
     "product_type": "Men's Premium Athletic Sneakers",
     "images": [
@@ -471,6 +471,12 @@
         "option1": "Black",
         "option2": "One Size",
         "cost_price": 65.0
+      },
+      {
+        "sku": "FLO-WLT-EXCL-OS",
+        "option1": "Gold (Exclusive Edition)",
+        "option2": "One Size",
+        "cost_price": 95.0
       }
     ]
   },

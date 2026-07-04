@@ -112,6 +112,55 @@
           }
         }
       }
+    },
+    "/process-payment": {
+      "post": {
+        "summary": "Process Payment",
+        "description": "Processes payment transactions (Stripe or simulation) for client orders.",
+        "operationId": "processPayment",
+        "parameters": [
+          {
+            "name": "order_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The unique ID of the order to process payment for."
+          },
+          {
+            "name": "amount",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number"
+            },
+            "description": "The payment transaction amount in USD."
+          },
+          {
+            "name": "payment_method_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "mock-card"
+            },
+            "description": "The credit card token or payment method ID."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
