@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python web dependencies
-RUN pip3 install fastapi uvicorn ShopifyAPI
+RUN pip3 install fastapi uvicorn requests ShopifyAPI
 
 # Set working directory
 WORKDIR /idm

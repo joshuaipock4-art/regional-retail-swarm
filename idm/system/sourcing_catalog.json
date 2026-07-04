@@ -40,6 +40,80 @@
     ]
   },
   {
+    "title": "Venetian Lace Pointed-Toe Pumps",
+    "body_html": "<p><strong>Material:</strong> Delicate Venetian lace overlay, premium satin underlay, padded leather insole, and classic leather outsole.</p><p><strong>Source:</strong> Veneto region artisan ateliers.</p><p><strong>Description:</strong> Exquisite pointed-toe pumps wrapped in hand-crafted lace, perfect for evening wear and special events.</p>",
+    "vendor": "Veneto Artisan Ateliers",
+    "product_type": "Women's Dress Shoes & Luxury Heels",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1535043934128-cf0b28d52f95?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "VEN-W-PUMP-BLK-37",
+        "option1": "Black",
+        "option2": "37",
+        "cost_price": 210.0
+      },
+      {
+        "sku": "VEN-W-PUMP-BLK-38",
+        "option1": "Black",
+        "option2": "38",
+        "cost_price": 210.0
+      },
+      {
+        "sku": "VEN-W-PUMP-SLV-37",
+        "option1": "Silver",
+        "option2": "37",
+        "cost_price": 210.0
+      },
+      {
+        "sku": "VEN-W-PUMP-SLV-38",
+        "option1": "Silver",
+        "option2": "38",
+        "cost_price": 210.0
+      }
+    ]
+  },
+  {
+    "title": "Amalfi Coast Leather Strappy Sandals",
+    "body_html": "<p><strong>Material:</strong> Full-grain hand-dyed Italian calfskin straps, cushioned leather footbed, durable leather sole with non-slip rubber insert.</p><p><strong>Source:</strong> Campania region leather crafters.</p><p><strong>Description:</strong> Elegant, lightweight strappy sandals designed for exceptional comfort and warm-weather sophistication.</p>",
+    "vendor": "Campania Leather Crafters",
+    "product_type": "Women's Dress Shoes & Luxury Heels",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1562273138-f46be4ebdf33?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "AMA-W-SAND-GLD-37",
+        "option1": "Gold",
+        "option2": "37",
+        "cost_price": 175.0
+      },
+      {
+        "sku": "AMA-W-SAND-GLD-38",
+        "option1": "Gold",
+        "option2": "38",
+        "cost_price": 175.0
+      },
+      {
+        "sku": "AMA-W-SAND-TAN-37",
+        "option1": "Tan",
+        "option2": "37",
+        "cost_price": 175.0
+      },
+      {
+        "sku": "AMA-W-SAND-TAN-38",
+        "option1": "Tan",
+        "option2": "38",
+        "cost_price": 175.0
+      }
+    ]
+  },
+  {
     "title": "AeroKnit Performance Sneaker V2",
     "body_html": "<p><strong>Material:</strong> High-tensile engineered Primeknit upper, responsive foam cushioning, reinforced TPU stabilizer heel.</p><p><strong>Source:</strong> Jinjiang/Putian OEM factory hubs.</p><p><strong>Description:</strong> Ultra-lightweight sports sneaker designed for cross-training and competitive running, offering dynamic arch support and maximum breathability.</p>",
     "vendor": "Jinjiang OEM Factory Hub",
@@ -73,6 +147,80 @@
         "option1": "Grey",
         "option2": "37",
         "cost_price": 38.5
+      }
+    ]
+  },
+  {
+    "title": "NovaGlide Cushioned Trainer",
+    "body_html": "<p><strong>Material:</strong> Multi-layered mesh upper for ventilation, ultra-soft nitrogen-infused cushioning midsole, high-wear rubber outsole.</p><p><strong>Source:</strong> Putian OEM factory hubs.</p><p><strong>Description:</strong> Premium athletic sneakers offering maximum impact protection and a secure, cushioned ride for long run cycles.</p>",
+    "vendor": "Putian OEM Factory Hub",
+    "product_type": "Women's Premium Athletic Sneakers",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "NOV-W-TRAIN-PNK-36",
+        "option1": "Pink",
+        "option2": "36",
+        "cost_price": 45.0
+      },
+      {
+        "sku": "NOV-W-TRAIN-PNK-37",
+        "option1": "Pink",
+        "option2": "37",
+        "cost_price": 45.0
+      },
+      {
+        "sku": "NOV-W-TRAIN-BLK-36",
+        "option1": "Black",
+        "option2": "36",
+        "cost_price": 45.0
+      },
+      {
+        "sku": "NOV-W-TRAIN-BLK-37",
+        "option1": "Black",
+        "option2": "37",
+        "cost_price": 45.0
+      }
+    ]
+  },
+  {
+    "title": "FlexKnit Lightweight Jogger",
+    "body_html": "<p><strong>Material:</strong> Flexible knit textile upper, memory foam footbed, lightweight EVA traction sole.</p><p><strong>Source:</strong> Jinjiang OEM Factory Hub.</p><p><strong>Description:</strong> Ultra-light minimalist athletic shoe designed for day-to-day wear and light jogging, ensuring natural foot flex.</p>",
+    "vendor": "Jinjiang OEM Factory Hub",
+    "product_type": "Women's Premium Athletic Sneakers",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "FLE-W-JOG-GRY-36",
+        "option1": "Grey",
+        "option2": "36",
+        "cost_price": 35.0
+      },
+      {
+        "sku": "FLE-W-JOG-GRY-37",
+        "option1": "Grey",
+        "option2": "37",
+        "cost_price": 35.0
+      },
+      {
+        "sku": "FLE-W-JOG-WHT-36",
+        "option1": "White",
+        "option2": "36",
+        "cost_price": 35.0
+      },
+      {
+        "sku": "FLE-W-JOG-WHT-37",
+        "option1": "White",
+        "option2": "37",
+        "cost_price": 35.0
       }
     ]
   },
@@ -117,6 +265,80 @@
     ]
   },
   {
+    "title": "Tuscan Calfskin Double Monk Strap Shoes",
+    "body_html": "<p><strong>Material:</strong> Select Tuscan calfskin upper, brass buckle hardware, durable Goodyear-welted leather sole.</p><p><strong>Source:</strong> Florence artisan networks.</p><p><strong>Description:</strong> Striking double monk strap shoes offering a sophisticated profile for formal, business, or premium social attire.</p>",
+    "vendor": "Florence Artisan Networks",
+    "product_type": "Men's Formal Dress Shoes",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "TUS-M-MONK-BRN-41",
+        "option1": "Brown",
+        "option2": "41",
+        "cost_price": 195.0
+      },
+      {
+        "sku": "TUS-M-MONK-BRN-42",
+        "option1": "Brown",
+        "option2": "42",
+        "cost_price": 195.0
+      },
+      {
+        "sku": "TUS-M-MONK-BLK-41",
+        "option1": "Black",
+        "option2": "41",
+        "cost_price": 195.0
+      },
+      {
+        "sku": "TUS-M-MONK-BLK-42",
+        "option1": "Black",
+        "option2": "42",
+        "cost_price": 195.0
+      }
+    ]
+  },
+  {
+    "title": "Roma Hand-Stitched Leather Loafers",
+    "body_html": "<p><strong>Material:</strong> Soft hand-stitched pebbled calfskin leather, leather lining, flexible rubber driving sole.</p><p><strong>Source:</strong> Lazio region shoe workshops.</p><p><strong>Description:</strong> Luxurious driving loafers combining classic Italian style with casual, slip-on convenience.</p>",
+    "vendor": "Lazio Shoe Workshops",
+    "product_type": "Men's Formal Dress Shoes",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "ROM-M-LOAF-TAN-41",
+        "option1": "Tan",
+        "option2": "41",
+        "cost_price": 160.0
+      },
+      {
+        "sku": "ROM-M-LOAF-TAN-42",
+        "option1": "Tan",
+        "option2": "42",
+        "cost_price": 160.0
+      },
+      {
+        "sku": "ROM-M-LOAF-BLK-41",
+        "option1": "Black",
+        "option2": "41",
+        "cost_price": 160.0
+      },
+      {
+        "sku": "ROM-M-LOAF-BLK-42",
+        "option1": "Black",
+        "option2": "42",
+        "cost_price": 160.0
+      }
+    ]
+  },
+  {
     "title": "Apex Trail Runner Pro",
     "body_html": "<p><strong>Material:</strong> Heavy-duty ballistic nylon mesh, protective TPU overlays, high-traction Vibram rubber outsole, dual-density EVA midsole.</p><p><strong>Source:</strong> Jinjiang/Putian OEM factory hubs.</p><p><strong>Description:</strong> Rugged trail-running sneaker engineered to withstand demanding outdoor terrain while providing high-rebound cushioning.</p>",
     "vendor": "Putian OEM Factory Hub",
@@ -154,6 +376,80 @@
     ]
   },
   {
+    "title": "VaporMax Performance Runner",
+    "body_html": "<p><strong>Material:</strong> Engineered warp-knit upper, full-length responsive air cushion unit, high-grip carbon rubber pods.</p><p><strong>Source:</strong> Putian OEM Factory Hub.</p><p><strong>Description:</strong> High-performance athletic sneaker focused on energy return, joint comfort, and dynamic stride speed.</p>",
+    "vendor": "Putian OEM Factory Hub",
+    "product_type": "Men's Premium Athletic Sneakers",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "VAP-M-RUN-BLK-42",
+        "option1": "Black",
+        "option2": "42",
+        "cost_price": 55.0
+      },
+      {
+        "sku": "VAP-M-RUN-BLK-43",
+        "option1": "Black",
+        "option2": "43",
+        "cost_price": 55.0
+      },
+      {
+        "sku": "VAP-M-RUN-RED-42",
+        "option1": "Red",
+        "option2": "42",
+        "cost_price": 55.0
+      },
+      {
+        "sku": "VAP-M-RUN-RED-43",
+        "option1": "Red",
+        "option2": "43",
+        "cost_price": 55.0
+      }
+    ]
+  },
+  {
+    "title": "TerraGrip Trail Hiking Sneaker",
+    "body_html": "<p><strong>Material:</strong> Waterproof ripstop textile upper, reinforced rubber toe cap, multi-directional lugged outsole.</p><p><strong>Source:</strong> Jinjiang OEM Factory Hub.</p><p><strong>Description:</strong> Versatile outdoor trail hiking shoe offering superior protection, stability, and wet-weather traction.</p>",
+    "vendor": "Jinjiang OEM Factory Hub",
+    "product_type": "Men's Premium Athletic Sneakers",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "TER-M-HIKE-GRN-42",
+        "option1": "Green",
+        "option2": "42",
+        "cost_price": 48.0
+      },
+      {
+        "sku": "TER-M-HIKE-GRN-43",
+        "option1": "Green",
+        "option2": "43",
+        "cost_price": 48.0
+      },
+      {
+        "sku": "TER-M-HIKE-BRN-42",
+        "option1": "Brown",
+        "option2": "42",
+        "cost_price": 48.0
+      },
+      {
+        "sku": "TER-M-HIKE-BRN-43",
+        "option1": "Brown",
+        "option2": "43",
+        "cost_price": 48.0
+      }
+    ]
+  },
+  {
     "title": "Florentine Vachetta Leather Bifold Wallet",
     "body_html": "<p><strong>Material:</strong> Tuscan vegetable-tanned Vachetta leather, hand-waxed linen thread stitching, hand-finished burnished edges.</p><p><strong>Source:</strong> Direct Italian artisan leather crafter networks.</p><p><strong>Description:</strong> A premium minimalist bifold wallet that will develop a rich, unique patina over time. Features 6 card slots and a dedicated bill compartment.</p>",
     "vendor": "Florentine Crafter Networks",
@@ -175,6 +471,56 @@
         "option1": "Black",
         "option2": "One Size",
         "cost_price": 65.0
+      }
+    ]
+  },
+  {
+    "title": "Siena Zippered Leather Travel Wallet",
+    "body_html": "<p><strong>Material:</strong> Heavy-grain Saffiano leather, secure polished metal zip-around closure, multiple inner document slots.</p><p><strong>Source:</strong> Siena workshop collectives.</p><p><strong>Description:</strong> Secure and spacious zippered travel wallet, built to organize passports, multiple currencies, and credit cards during travel.</p>",
+    "vendor": "Siena Workshop Collectives",
+    "product_type": "Handmade Italian Leather Wallets & Small Leather Goods",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "SIE-WLT-ZIP-BRN-OS",
+        "option1": "Brown",
+        "option2": "One Size",
+        "cost_price": 85.0
+      },
+      {
+        "sku": "SIE-WLT-ZIP-BLK-OS",
+        "option1": "Black",
+        "option2": "One Size",
+        "cost_price": 85.0
+      }
+    ]
+  },
+  {
+    "title": "San Gimignano Slim Leather Cardholder",
+    "body_html": "<p><strong>Material:</strong> Vegetable-tanned Tuscan leather, RFID blocking lining, ultra-slim stitched profile.</p><p><strong>Source:</strong> San Gimignano artisan guild.</p><p><strong>Description:</strong> Modern minimalist cardholder featuring 4 exterior card slots and a middle cash pocket, keeping pockets sleek and light.</p>",
+    "vendor": "San Gimignano Artisan Guild",
+    "product_type": "Handmade Italian Leather Wallets & Small Leather Goods",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=800"
+      }
+    ],
+    "variants": [
+      {
+        "sku": "SGI-CARD-TAN-OS",
+        "option1": "Tan",
+        "option2": "One Size",
+        "cost_price": 35.0
+      },
+      {
+        "sku": "SGI-CARD-BLK-OS",
+        "option1": "Black",
+        "option2": "One Size",
+        "cost_price": 35.0
       }
     ]
   }
