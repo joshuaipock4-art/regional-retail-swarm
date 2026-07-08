@@ -9,7 +9,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.732327
+    "last_updated": 1783157168.743651
   },
   "TUS-W-HEEL-RED-38": {
     "sku": "TUS-W-HEEL-RED-38",
@@ -21,7 +21,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323341
+    "last_updated": 1783157168.7436554
   },
   "TUS-W-HEEL-BLK-37": {
     "sku": "TUS-W-HEEL-BLK-37",
@@ -33,7 +33,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.732336
+    "last_updated": 1783157168.7436566
   },
   "TUS-W-HEEL-BLK-38": {
     "sku": "TUS-W-HEEL-BLK-38",
@@ -45,7 +45,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323377
+    "last_updated": 1783157168.7436576
   },
   "JIN-W-AERO-WHT-36": {
     "sku": "JIN-W-AERO-WHT-36",
@@ -57,7 +57,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.732339
+    "last_updated": 1783157168.7436585
   },
   "JIN-W-AERO-WHT-37": {
     "sku": "JIN-W-AERO-WHT-37",
@@ -69,7 +69,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323403
+    "last_updated": 1783157168.7436593
   },
   "JIN-W-AERO-GRY-36": {
     "sku": "JIN-W-AERO-GRY-36",
@@ -81,7 +81,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323418
+    "last_updated": 1783157168.7436602
   },
   "JIN-W-AERO-GRY-37": {
     "sku": "JIN-W-AERO-GRY-37",
@@ -93,7 +93,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323468
+    "last_updated": 1783157168.7436607
   },
   "MIL-M-OXFORD-BRN-41": {
     "sku": "MIL-M-OXFORD-BRN-41",
@@ -105,7 +105,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.732348
+    "last_updated": 1783157168.7436619
   },
   "MIL-M-OXFORD-BRN-42": {
     "sku": "MIL-M-OXFORD-BRN-42",
@@ -117,7 +117,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323534
+    "last_updated": 1783157168.7436626
   },
   "MIL-M-OXFORD-BLK-41": {
     "sku": "MIL-M-OXFORD-BLK-41",
@@ -129,7 +129,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323546
+    "last_updated": 1783157168.7436635
   },
   "MIL-M-OXFORD-BLK-42": {
     "sku": "MIL-M-OXFORD-BLK-42",
@@ -141,7 +141,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323563
+    "last_updated": 1783157168.7436645
   },
   "PUT-M-APEX-BLU-42": {
     "sku": "PUT-M-APEX-BLU-42",
@@ -153,7 +153,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323577
+    "last_updated": 1783157168.7436652
   },
   "PUT-M-APEX-BLU-43": {
     "sku": "PUT-M-APEX-BLU-43",
@@ -165,7 +165,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323587
+    "last_updated": 1783157168.743666
   },
   "PUT-M-APEX-BLK-42": {
     "sku": "PUT-M-APEX-BLK-42",
@@ -177,7 +177,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.73236
+    "last_updated": 1783157168.7436664
   },
   "PUT-M-APEX-BLK-43": {
     "sku": "PUT-M-APEX-BLK-43",
@@ -189,7 +189,7 @@
     ],
     "region_scope": "United States",
     "exclusive": true,
-    "last_updated": 1783012830.7323902
+    "last_updated": 1783157168.7436981
   },
   "FLO-WLT-TAN-OS": {
     "sku": "FLO-WLT-TAN-OS",
@@ -201,7 +201,7 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323918
+    "last_updated": 1783157168.7436998
   },
   "FLO-WLT-BLK-OS": {
     "sku": "FLO-WLT-BLK-OS",
@@ -213,6 +213,6 @@
     ],
     "region_scope": "United States",
     "exclusive": false,
-    "last_updated": 1783012830.7323933
+    "last_updated": 1783157168.7437005
   }
 }

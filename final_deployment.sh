@@ -5,7 +5,7 @@ set -e
 
 export REGION="${REGION:-us-south}"
 
-GITHUB_TOKEN="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"
+GITHUB_TOKEN="${GITHUB_TOKEN}"
 REPO_URL="https://github.com/joshuaipock4-art/regional-retail-swarm"
 NAMESPACE="online_retail_swarm"
 IMAGE_NAME="retail-swarm"
@@ -19,7 +19,10 @@ TOKEN_RESPONSE=$(curl -s -X POST "https://iam.cloud.ibm.com/identity/token" \
   --data-urlencode "apikey=$IBMCLOUD_API_KEY")
 ACCESS_TOKEN=$(echo $TOKEN_RESPONSE | sed -n 's/.*"access_token":"\([^"]*\)".*/\1/p')
 
-echo "[2/4] Ensuring Registry Secret exists..."
+echo "[2/4] Re-creating Registry Secret..."
+curl -s -X DELETE "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PROJECT_ID}/secrets/retail-swarm-registry-secret" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" > /dev/null || true
+
 curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PROJECT_ID}/secrets" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -31,10 +34,12 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
       \"username\": \"iamapikey\",
       \"password\": \"$IBMCLOUD_API_KEY\"
     }
-  }" > /dev/null || true
+  }" | python3 -m json.tool || true
 
-echo "[2.5/4] Creating Git Auth Secret..."
-# For HTTPS GitHub we use basic_auth
+echo "[2.5/4] Re-creating Git Auth Secret..."
+curl -s -X DELETE "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PROJECT_ID}/secrets/retail-swarm-git-auth" \
+  -H "Authorization: Bearer $ACCESS_TOKEN" > /dev/null || true
+
 curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PROJECT_ID}/secrets" \
   -H "Authorization: Bearer $ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
@@ -45,7 +50,7 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
       \"username\": \"joshuaipock4-art\",
       \"password\": \"$GITHUB_TOKEN\"
     }
-  }" > /dev/null || true
+  }" | python3 -m json.tool || true
 
 echo "[3/4] Re-creating Build Configuration..."
 # Delete old build
@@ -62,9 +67,11 @@ curl -s -X POST "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${PR
     \"name\": \"retail-swarm-github-build\",
     \"source_type\": \"git\",
     \"source_url\": \"$REPO_URL\",
-    \"source_secret\": \"retail-swarm-git-auth\",
+    \"source_revision\": \"shopify-integration-822303029735242017\",
     \"strategy_type\": \"dockerfile\",
+    \"strategy_size\": \"medium\",
     \"output_image\": \"$REGISTRY_SERVER/$NAMESPACE/$IMAGE_NAME:latest\",
+    \"source_secret\": \"retail-swarm-git-auth\",
     \"output_secret\": \"retail-swarm-registry-secret\"
   }" | python3 -m json.tool
 

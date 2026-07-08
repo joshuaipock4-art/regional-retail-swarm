@@ -77,7 +77,7 @@ shopify_client = ShopifyClient(client_id=SHOPIFY_CLIENT_ID, client_secret=SHOPIF
 @app.get("/")
 def read_root():
     # Show status of live API connectivity as well
-    shopify_connected = shopify_client.verify_connection() if (SHOPIFY_TOKEN and SHOPIFY_URL) else False
+    shopify_connected = shopify_client.verify_connection() if (shopify_client.access_token and SHOPIFY_URL) else False
     cj_key_set = bool(os.environ.get("CJ_DROPSHIPPING_API_KEY"))
     
     return {
@@ -85,7 +85,7 @@ def read_root():
         "swarm": "active", 
         "agents": 9,
         "api_connectivity": {
-            "shopify": "connected" if shopify_connected else "configured_offline" if (SHOPIFY_TOKEN and SHOPIFY_URL) else "disconnected",
+            "shopify": "connected" if shopify_connected else "configured_offline" if (shopify_client.access_token and SHOPIFY_URL) else "disconnected",
             "cj_dropshipping": "configured" if cj_key_set else "disconnected"
         }
     }
@@ -129,6 +129,75 @@ def process_order(order_id: str, region: str):
         "status": "processing",
         "estimated_delivery": "2-4 business days"
     }
+
+@app.post("/process-payment", operation_id="processPayment")
+def process_payment(order_id: str, amount: float, payment_method_id: str = "mock-card"):
+    """
+    Processes credit card payments for orders using Stripe.
+    Falls back to a secure mockup payment processor if Stripe secret keys are not configured.
+    """
+    stripe_key = os.environ.get("STRIPE_SECRET_KEY", "")
+    
+    if stripe_key:
+        try:
+            try:
+                import stripe
+            except ImportError:
+                import subprocess
+                import sys
+                subprocess.check_call([sys.executable, "-m", "pip", "install", "--no-cache-dir", "stripe"])
+                import stripe
+            stripe.api_key = stripe_key
+            
+            # Amount is in dollars, convert to cents for Stripe
+            amount_cents = int(amount * 100)
+            
+            intent = stripe.PaymentIntent.create(
+                amount=amount_cents,
+                currency="usd",
+                payment_method=payment_method_id,
+                confirm=True,
+                automatic_payment_methods={
+                    "enabled": True,
+                    "allow_redirects": "never"
+                },
+                metadata={"order_id": order_id}
+            )
+            
+            if intent.status == "succeeded":
+                return {
+                    "payment_provider": "Stripe",
+                    "status": "succeeded",
+                    "transaction_id": intent.id,
+                    "amount": amount,
+                    "order_id": order_id
+                }
+            else:
+                return {
+                    "payment_provider": "Stripe",
+                    "status": intent.status,
+                    "transaction_id": intent.id,
+                    "amount": amount,
+                    "order_id": order_id
+                }
+        except Exception as e:
+            raise HTTPException(status_code=400, detail=f"Stripe Payment Failed: {str(e)}")
+    else:
+        # Secure simulation fallback
+        print(f"[Simulated Payment] Processing payment of ${amount:.2f} for Order {order_id} using {payment_method_id}...")
+        time.sleep(1.0) # simulate network latency
+        
+        # Simple simulated transaction ID
+        simulated_tx_id = f"tx_mock_{int(time.time())}_{order_id[:8]}"
+        
+        return {
+            "payment_provider": "Simulated Gateway",
+            "status": "succeeded",
+            "transaction_id": simulated_tx_id,
+            "amount": amount,
+            "order_id": order_id,
+            "message": "Payment processed successfully via simulated gateway (Stripe not configured)."
+        }
 
 if __name__ == "__main__":
     import uvicorn

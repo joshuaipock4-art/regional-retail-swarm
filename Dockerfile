@@ -10,13 +10,19 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python web dependencies
-RUN pip3 install fastapi uvicorn
+RUN pip3 install --no-cache-dir fastapi uvicorn requests
+RUN pip3 install --no-cache-dir ShopifyAPI
 
 # Set working directory
 WORKDIR /idm
 
-# Copy the entire idm directory
+# Copy the source folders explicitly
 COPY idm/ /idm/
+COPY core_engine.py /idm/
+COPY bootstrap.sh /idm/
+COPY agent_0_trend.py /idm/
+COPY agent_1_source.py /idm/
+COPY agent_4_storefront.py /idm/
 
 # Ensure log directory exists
 RUN mkdir -p /idm/system/logs

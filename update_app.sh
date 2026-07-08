@@ -28,7 +28,18 @@ curl -s -X PATCH "https://api.${REGION}.codeengine.cloud.ibm.com/v2/projects/${P
   -H "Content-Type: application/json" \
   -H "If-Match: $ETAG" \
   -d "{
-    \"image_reference\": \"us.icr.io/online_retail_swarm/retail-swarm:latest\"
+    \"image_reference\": \"us.icr.io/online_retail_swarm/retail-swarm:latest\",
+    \"run_env_variables\": [
+      {
+        \"type\": \"secret_full_reference\",
+        \"reference\": \"ecommerce-secrets\"
+      },
+      {
+        \"type\": \"literal\",
+        \"name\": \"UPDATED_AT\",
+        \"value\": \"$(date +%s)\"
+      }
+    ]
   }" | python3 -m json.tool
 
 echo "--------------------------------------------------------"
